@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{HW1 (Corrections) (CSCI-C241)}
+\author{Lillie Donato}
+\date{16 January 2024}
+
+\begin{document}
+
+\maketitle
+
+% \section{Introduction}
+\begin{itemize}
+    \item Question Two
+    \begin{itemize}
+        \item 2f
+
+        P = Participants were timed on this task
+
+        Q = Most finished in less than 8 minutes
+
+        $\neg P \land Q$
+        \item 2j
+        
+        P = The people will give up their arms
+
+        Q = The tyrant resigns
+
+        R = We get our money back
+
+        $P \rightarrow (Q \land R)$
+        \item 2k
+        
+        P = The Lyapunov function exists
+
+        Q = The system is stable
+
+        $P \leftrightarrow Q$
+        \item 2l
+        
+        P = The Turing Test was passed
+
+        Q = The individal is intelligent
+
+        $P \rightarrow Q$
+        \item 2m
+        
+        P = There are no antibodies in the subject’s body
+
+        Q = The subject is susceptible to an infection
+
+        $P \rightarrow \neg Q$
+        \item 2n
+        
+        P = Disciplinary knowledge is used
+
+        Q = Organizational skills is used
+
+        R = The teaching is considered effective
+
+        $R \rightarrow (P \land Q)$
+    \end{itemize}
+    \item Question Five
+    \begin{itemize}
+        \item 5c
+        
+        The statement is not a contradiction as shown in the following truth assignment:
+        
+        X = false
+
+        $X \rightarrow \neg X$ = $false \rightarrow \neg false$ = $false \rightarrow true$ = $true$
+        \item 5d
+        
+        The statement is not a tautology as shown in the following truth assignment:
+        
+        A = false
+
+        B = true
+
+        $\neg A \rightarrow \neg (A \lor B)$ = $\neg true \rightarrow \neg (true \lor false)$ = $false \rightarrow true$ = $false$
+        \item 5e
+        
+        The statement is a contingency as shown in the following truth assignments:
+        
+        \begin{enumerate}
+            \item
+            A = true
+
+            B = true
+
+            $\neg A \rightarrow \neg (A \lor B)$ = $\neg true \rightarrow \neg (true \lor true)$ = $false \rightarrow false$ = $true$
+
+            \item
+            A = false
+
+            B = true
+
+            $\neg A \rightarrow \neg (A \lor B)$ = $\neg false \rightarrow \neg (false \lor true)$ = $true \rightarrow false$ = $false$
+        \end{enumerate}
+        \item 5g
+        
+        The statement is satisfiable as shown in the following truth assignment:
+        
+        A = true
+
+        B = true
+
+        C = true
+        
+        $((A \rightarrow B) \land (C \lor \neg B)) \rightarrow (A \rightarrow C) = ((true \rightarrow true) \land (true \lor false)) \rightarrow (true \rightarrow true)$ = $(true \land true) \rightarrow true$ = $true \rightarrow true$ = $true$
+        \item 5i
+        
+        The statement is not a contradiction as shown in the following truth assignment:
+        
+        A = true
+
+        B = true
+
+        $(A \rightarrow B) \rightarrow (\neg A \rightarrow \neg B) = (true \rightarrow true) = true$
+        \item 5j
+        
+        The statement is not a tautology as shown in the following truth assignment:
+        
+        A = false
+
+        B = true
+
+        $(A \rightarrow B) \rightarrow (\neg A \rightarrow \neg B) = (false \rightarrow true) \rightarrow (true \rightarrow false) = true \rightarrow false = false$
+        \item 5k
+        
+        The statement is satisfiable as shown in the following truth assignment:
+
+        A = false
+
+        B = true
+
+        C = false
+
+        D = true
+
+        $\neg A \lor ((D \lor \neg D) \rightarrow ((B \land \neg B) \leftrightarrow (C \rightarrow C))) = \neg false \lor ((true \lor \neg true) \rightarrow ((true \land \neg true) \leftrightarrow (false \rightarrow false))) = true \lor (true \rightarrow (false \leftrightarrow true)) = true$
+    \end{itemize}
+\end{itemize}
+
+\end{document}

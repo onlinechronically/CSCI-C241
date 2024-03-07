@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+
+\title{HW6 (CSCI-C241)}
+\author{Lillie Donato}
+\date{6 February 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Question One
+    \begin{enumerate}
+        \item Claim: $2x < 2y$ if $x + 5 < y$
+        \begin{proof}
+            \begin{align*}
+                &1. \quad \text{Choose two real numbers } x \text{ and } y \text{ such that } x + 5 < y \\
+                &2. \hspace{1cm} \quad \text{Since } x+5 < y \text{, we know } 2x + 10 < 2y \\
+                &3. \quad \text{Because } 2y > 2x + 10 \text{, we know } 2y > 2x \text{, for the reason that } 10 + 2x > 2x
+            \end{align*}
+        \end{proof}
+        \item Claim: $\{x \mid \frac{x+1}{2} \geq 4\} \subseteq \{x \mid 2x - 2 > 10\}$
+        \begin{proof}
+            \begin{align*}
+                &1. \quad \text{Choose a real number } x \text{ such that } \frac{x+1}{2} \geq 4 \\
+                &2. \quad \hspace{1cm} \text{Since } \frac{x+1}{2} \geq 4 \text{, we know } x+1 \geq 8 \\
+                &3. \quad \hspace{1cm} \text{Since } x+1 \geq 8 \text{, we know } x \geq 7 \\
+                &4. \quad \hspace{1cm} \text{Since } x \geq 7 \text{, we know } x > 6 \\
+                &5. \quad \hspace{1cm} \text{Since } x > 6 \text{, we know } 2x > 12 \\
+                &6. \quad \hspace{1cm} \text{Since } 2x > 12 \text{, we know } 2x - 2 > 10 \\
+                &7. \quad \hspace{1cm} \text{Since } 2x - 2 > 10 \text{, we know } x \in \{x \mid 2x - 2 > 10\} \\
+                &8. \quad \text{Since all the members of } \{x \mid \frac{x+1}{2} \geq 4\} \text{ are members of } \{x \mid 2x - 2 > 10\} \text{, } \\
+                & \quad \text{we know } \{x \mid \frac{x+1}{2} \geq 4\} \subseteq \{x \mid 2x - 2 > 10\}
+            \end{align*}
+        \end{proof}
+        \item Claim: $A \cap B \subseteq (A \cup C) \cap D$
+        \begin{proof}
+            \begin{align*}
+                &1. \quad \text{Choose the sets } A, B, C, D \\
+                &2. \quad \hspace{1cm} \text{Since } B \cup C \subseteq D \text{, we know } B \subseteq D \\
+                &3. \quad \hspace{1cm} \text{Since } A \text{, we know } A \subseteq A \\
+                &4. \quad \hspace{1cm} \text{Since } A \subseteq A \text{, we know } A \subseteq (A \cup C) \\
+                &4. \quad \hspace{1cm} \text{Since } B \cup C \subseteq D \text{, we know } C \subseteq D \\
+                &5. \quad \text{Since } A \subseteq (A \cup C) \text{ and } B \subseteq D \text{, we know } A \cap B \subseteq (A \cup C) \cap D \\
+            \end{align*}
+        \end{proof}
+        \item Claim: $X \subseteq \overline{Y \cap Z}$
+        \begin{proof}
+            \begin{align*}
+                &1. \quad \text{Choose the sets } X, Y, Z \\
+                &2. \quad \hspace{1cm} \text{Choose towards a contradiction } X \subseteq Y \cap Z \\
+                &3. \quad \hspace{1cm} \text{Since } (X \cap Y) \subseteq \overline{Z} \text{, we know } X \subseteq \overline{Z} \\
+                &4. \quad \hspace{1cm} \text{Since } X \subseteq \overline{Z} \text{, we know } X \nsubseteq Z \\
+                &5. \quad \hspace{1cm} \text{Since } X \nsubseteq Z \text{, we know } X \nsubseteq Y \cap Z \\
+                &6. \quad \text{Since } X \nsubseteq Y \cap Z \text{, we know } X \subseteq \overline{Y \cap Z}
+                % &4. \quad \hspace{1cm} \text{Since } A \subseteq A \text{, we know } A \subseteq (A \cup C) \\
+                % &4. \quad \hspace{1cm} \text{Since } B \cup C \subseteq D \text{, we know } C \subseteq D \\
+                % &5. \quad \text{Since } A \subseteq (A \cup C) \text{ and } B \subseteq D \text{, we know } A \cap B \subseteq (A \cup C) \cap D \\
+            \end{align*}
+        \end{proof}
+        \item Claim: $H \cup (J \cap K) \subseteq (H \cup K) \setminus M$
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose the sets } H, J, K, L, M \\
+                &\quad \text{Case 1: } H \\
+                &\quad \hspace{1cm} \text{Since } H \subseteq \overline{M} \text{, we know } H \nsubseteq M \\
+                &\quad \hspace{1cm} \text{Since } H \subseteq H \text{, we know } H \subseteq (H \cup K) \\
+                &\quad \hspace{1cm} \text{Since } H \nsubseteq M \text{ and } H \subseteq (H \cup K) \text{, we know } H \subseteq (H \cup K) \setminus M \\
+                &\quad \text{Case 2: } J \cap K \\
+                &\quad \hspace{1cm} \text{Since } J \subseteq L \setminus M \text{, we know } J \subseteq \overline{M} \\
+                &\quad \hspace{1cm} \text{Since } J \subseteq \overline{M} \text{, we know } J \nsubseteq M \\
+                &\quad \hspace{1cm} \text{Since } K \subseteq K \text{, we know } J \cap K \subseteq K \\
+                &\quad \hspace{1cm} \text{Since } J \cap K \subseteq K \text{, we know } J \cap K \subseteq (H \cup K) \\
+                &\quad \hspace{1cm} \text{Since } J \cap K \subseteq (H \cup K) \text{ and } J \nsubseteq M \text{, we know } J \cap K \subseteq (H \cup K) \setminus M \\
+                &\quad \text{In either case of } H \cup (J \cap K) \text{, we proved that they were a subset of } (H \cup K) \setminus M \text{, } \\
+                &\quad \text{so } H \cup (J \cap K) \subseteq (H \cup K) \setminus M
+            \end{align}
+        \end{proof}
+    \end{enumerate}
+    \item Claim: $A \cup B \subseteq B \cap C$ if $A \subseteq C$
+    
+    The Claim is proven $false$, with the following counter example:
+
+    $A = \{1,2,3\}$ \\
+    $B = \{4,5,6\}$ \\
+    $C = \{-3,-2,-1,0,1,2,3\}$
+    \item Question Three
+    \begin{enumerate}
+        \item $S_n = \{nx \mid x \in \mathbb{Z}\}$ \\
+        Claim: if $a, b \in S_n$ then $5a - b \in S_n$
+        \begin{proof}
+            \begin{align*}
+                &1. \quad \text{Choose } a,b \in S_n \\
+                &2. \hspace{1cm} \quad \text{Since } a \in S_n \text{, we know } a = nx \text{, for some } x \in \mathbb{Z} \\
+                &3. \hspace{1cm} \quad \text{Since } b \in S_n \text{, we know } b = ny \text{, for some } y \in \mathbb{Z} \\
+                &4. \hspace{1cm} \quad \text{Since } 5a - b = 5(nx) - ny \text{, we know } 5nx - ny \\
+                &5. \hspace{1cm} \quad \text{Since } 5nx - ny \text{, we know } n(5x - y) \\
+                &6. \hspace{1cm} \quad \text{Let } z = 5x - y \\
+                &7. \hspace{1cm} \quad \text{Since } x, y \text{ are both integers, we know } z \text{ must be an integer as well} \\
+                &8  \hspace{1cm} \quad \text{Since } x, z \text{ are both integers, we can write it as } nz \\
+                &9. \quad \text{Because of this, we know } 5a - b \in S_n
+            \end{align*}
+        \end{proof}
+        \item Claim: The sum of any two rational numbers is rational
+        \begin{proof}
+            \begin{align*}
+                &1. \quad \text{Choose two rational numbers } x,y \\
+                &2. \hspace{1cm} \quad \text{Since } x \text{ is rational, there exist integers } p_1,q_1 \text{ where } x = \frac{p_1}{q_1} \text{ and } q_1 \neq 0 \\
+                &3. \hspace{1cm} \quad \text{Since } y \text{ is rational, there exist integers } p_2,q_2 \text{ where } x = \frac{p_2}{q_2} \text{ and } q_2 \neq 0 \\
+                &4. \hspace{1cm} \quad \text{Since } x + y = \frac{p_1}{q_1} + \frac{p_2}{q_2} \text{, we know } x + y = \frac{p_1q_2 + p_2q_1}{q_1q_2} \\
+                &5. \hspace{1cm} \quad \text{Let } R = p_1q_2 + p_2q_1 \text{ and } S = q_1q_2 \\
+                &6. \hspace{1cm} \quad \text{Since } p_1 \text{ and } p_2 \text{ are integers, and } q_1 \text{ and } q_2 \text{ are non-zero integers, we know that } R \text{ is an integer } \\
+                & \hspace{1.3cm} \quad \text{and } S \text{ is a non-zero integer} \\
+                &7. \quad \text{Since } R \text{ is an integer and } S \text{ is a non-zero integer, we know that } x + y \text{ is rational} \\
+            \end{align*}
+        \end{proof}
+        \item $T = \{x+y \sqrt{2} \mid x \in \mathbb{Q} \land y \in \mathbb{Q} \}$ \\
+        $S = \{st \mid s \in T \land t \in T \}$ \\
+        Claim: S = T
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose } s \in T \text{ and } t \in T \\
+                &\quad \hspace{1cm} \text{Since } s \in T \text{, we know } s = x_1 + y_1 \sqrt{2} \text{, where } x_1,y_1 \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } t \in T \text{, we know } t = x_2 + y_2 \sqrt{2} \text{, where } x_2,y_2 \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } st = (x_1 + y_1 \sqrt{2})(x_2 + y_2 \sqrt{2}) \text{, we know } st = x_1x_2 + x_1y_2 \sqrt{2} + x_2y_1 \sqrt{2} + 2y_1y_2 \\
+                &\quad \hspace{1cm} \text{Since } st \text{, we know } st = (x_1x_2 + 2y_1y_2) + \sqrt{2}(x_1y_2 + x_2y_1) \\
+                &\quad \hspace{1cm} \text{Let } a = x_1x_2 + 2y_1y_2 \text{ and } b = x_1y_2 + x_2y_1 \\
+                &\quad \hspace{1cm} \text{Since } x_1,x_2,y_1,y_2 \in \mathbb{Q} \text{, we know } a,b \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } st = a+b \sqrt{2} \text{ and } a,b \in \mathbb{Q} \text{, we know } S \subseteq T \\
+                &\quad \text{Choose } t \in T \text{ where } t = x + y \sqrt{2} \text{, and } x,y \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } t \in T \text{, we know } t = 1 \cdot t \text{, where } 1 \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } t = 1 \cdot t \text{, we know } t \in S \text{, so } T \subseteq S \\
+                &\quad \text{Since } S \subseteq T \text{ and } T \subseteq S \text{, we know } S = T
+            \end{align}
+        \end{proof}
+        \item The sum of an irrational number and a rational number is irrational.
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose an irrational number } x \text{ and a rational number } y \\
+                &\quad \hspace{1cm} \text{Since } x \text{ is irrational, we know } x \neq \frac{p}{q} \text{, where } p,q \in \mathbb{Z} \\
+                &\quad \hspace{1cm} \text{Since } y \text{ is rational, we know } y = \frac{p_1}{q_1} \text{, where } p_1,q_1 \in \mathbb{Z} \\
+                &\quad \hspace{1cm} \text{Let } z = x + y \\
+                &\quad \hspace{1cm} \text{Assume towards a contradiction that } z \text{ is rational} \\
+                &\quad \hspace{2cm} \text{Since } z \text{ is rational, we know } z = \frac{p_2}{q_2} \text{, where } p_2,q_2 \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{We can rewrite } x + y = z \text{ as } x + \frac{p_1}{q_1} = \frac{p_2}{q_2} \\
+                &\quad \hspace{2cm} \text{Since } x + \frac{p_1}{q_1} = \frac{p_2}{q_2} \text{, we know } x = \frac{p_2}{q_2} - \frac{p_1}{q_1} \\
+                &\quad \hspace{2cm} \text{Since } x = \frac{p_2q_1 - p_1q_2}{q_1q_2} \text{, we know } x = \frac{p_1q_2 - p_2q_1}{q_1q_2} \\
+                &\quad \hspace{2cm} \text{Since } x = \frac{p_1q_2 - p_2q_1}{q_1q_2} \text{, we know } x \text{ is rational} \\
+                &\quad \hspace{1cm} \text{This is a contradiction to our earlier claim, so } z \text{ must be irrational}
+            \end{align}
+        \end{proof}
+        \item $S_n = \{nx \mid x \in \mathbb{Z}\}$
+        Claim: if $ab \notin S_n$ then $a,b \notin S_n$
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose } a,b,n \in S_n \text{ and } ab \text{ where } ab \notin S_n \\
+                &\quad \hspace{1cm} \text{Assume towards a contradiction that } a \in S_n \\
+                &\quad \hspace{2cm} \text{Since } a \in S_n \text{, we know } a = nx \text{, where } x \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{Since } a = nx \text{, we know } x = \frac{a}{n} \\
+                &\quad \hspace{2cm} \text{Since } x \in \mathbb{Z} \text{, we know } \frac{a}{n} \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{Since } \frac{a}{n} \in \mathbb{Z} \text{ and } b \in \mathbb{Z} \text{, we know } \frac{ab}{n} \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{Since } \frac{ab}{n} \in \mathbb{Z} \text{, we know } \frac{ab}{n} \cdot n \in S_n \\
+                &\quad \hspace{2cm} \text{Since } \frac{ab}{n} \cdot n \in S_n \text{, we know } ab \in S_n \\
+                &\quad \hspace{1cm} \text{This is a contradiction to our earlier claim, so } a \notin S_n \\
+                &\quad \hspace{1cm} \text{Assume towards a contradiction that } b \in S_n \\
+                &\quad \hspace{2cm} \text{Since } b \in S_n \text{, we know } b = nx \text{, where } x \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{Since } b = nx \text{, we know } x = \frac{b}{n} \\
+                &\quad \hspace{2cm} \text{Since } x \in \mathbb{Z} \text{, we know } \frac{b}{n} \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{Since } \frac{b}{n} \in \mathbb{Z} \text{ and } b \in \mathbb{Z} \text{, we know } \frac{ab}{n} \in \mathbb{Z} \\
+                &\quad \hspace{2cm} \text{Since } \frac{ab}{n} \in \mathbb{Z} \text{, we know } \frac{ab}{n} \cdot n \in S_n \\
+                &\quad \hspace{2cm} \text{Since } \frac{ab}{n} \cdot n \in S_n \text{, we know } ab \in S_n \\
+                &\quad \hspace{1cm} \text{This is a contradiction to our earlier claim, so } b \notin S_n
+            \end{align}
+        \end{proof}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

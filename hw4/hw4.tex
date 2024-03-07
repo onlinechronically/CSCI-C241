@@ -1,0 +1,195 @@
+\documentclass{article}
+% \usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\title{HW4 (CSCI-C241)}
+\author{Lillie Donato}
+\date{6 February 2024}
+
+\usepackage{geometry}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Question One
+    \begin{enumerate}
+        \item This proof is valid.
+        \item This proof is not valid, as in their proof by contradiction, they are not proving the entire conclusion and only one part of it.
+        \item This proof is valid.
+        \item This proof is valid.
+    \end{enumerate}
+    \item Question Two
+    \begin{enumerate}
+        \item
+        Claim: $P \land Q \vdash \neg (P \rightarrow \neg Q)$ \\
+        Goal: $\neg (P \rightarrow \neg Q)$
+        \begin{proof}[Pf: Assume $P \land Q$]
+            \begin{align*}
+                &1. \quad \text{From } P \land Q, \text{ we can conclude } P \text{ and } Q && \text{($\land - Elimination$)} \\
+                &2. \quad Subproof \\
+                &3. \quad \hspace{1cm} \text{Suppose towards a contradiction that } P \rightarrow \neg Q \\
+                &4. \quad \hspace{1cm} \text{From } P, \text{ we can apply } P \rightarrow \neg Q \text{ and conclude } \neg Q && \text{(Application)} \\
+                &5. \quad \text{Under the assumption of } P \rightarrow \neg Q, \text{ we proved an impossibility, } \\
+                &\quad \text{so therefore } \neg(P \rightarrow \neg Q) && \text{(Proof By Contradiction)}
+            \end{align*}
+        \end{proof}
+        \item
+        Claim: $\vdash \neg ((P \land Q) \land (P \rightarrow \neg Q))$ \\
+        Goal: $\neg (X \land Z)$
+        \begin{proof}[Proof]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Suppose } (P \land Q) \land (P \rightarrow \neg Q) \text{ towards a contradiction} \\
+                &3. \quad \hspace{1cm} \text{From } (P \land Q) \land (P \rightarrow \neg Q), \text{ we can conclude } P \land Q \text{ and } P \rightarrow \neg Q && \text{($\land - Elimination$)} \\
+                &4. \quad \hspace{1cm} \text{From } P \land Q, \text{ we can conclude } P \text{ and } Q && \text{($\land - Elimination$)} \\
+                &5. \quad \hspace{1cm} \text{From } P, \text{ we can apply } P \rightarrow \neg Q \text{ and conclude } \neg Q && \text{(Application)} \\
+                &6. \quad \text{Under the assumption of } (P \land Q) \land (P \rightarrow \neg Q) \text{ we proved an impossibility of } \\
+                &\quad Q \text{ and } \neg Q \text{ so therefore } \neg ((P \land Q) \land (P \rightarrow \neg Q)) && \text{(Proof By Contradiction)} \\
+            \end{align*}
+        \end{proof}
+        \item With the truth assignment ($A = false$, $B = true$), the proof is invalid.
+        \item
+        Claim: $(W \land X) \rightarrow \neg Y, X \vdash \neg (W \land Y)$ \\
+        Goal: $\neg (W \land Y)$
+        \begin{proof}[Assume $(W \land X) \rightarrow \neg Y, X$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Suppose } W \land Y \text{ towards a contradiction} \\
+                &3. \quad \hspace{1cm} \text{From } W \land Y, \text{ we can conclude } W \text{ and } Y && \text{($\land - Elimination$)} \\
+                &4. \quad \hspace{1cm} \text{From } W \text{ and } X, \text{ we can conclude } W \land X && \text{($\land - Introduction$)} \\
+                &5. \quad \hspace{1cm} \text{From } W \land X, \text{ we can apply } (W \land X) \rightarrow \neg Y \text{ and conclude } \neg Y && \text{(Application)} \\
+                &6. \quad \text{Under the assumption of } W \land Y \text{ we proved an impossibility of } Y \text{ and } \neg Y \\
+                &\quad \text{ so therefore } \neg (W \land Y) && \text{(Proof By Contradiction)} \\
+            \end{align*}
+        \end{proof}
+        \item
+        Claim: $(W \land X) \rightarrow \neg Y \vdash X \rightarrow \neg (W \land Y)$ \\
+        Goal: $X \rightarrow \neg (W \land Y)$
+        \begin{proof}[Assume $(W \land X) \rightarrow \neg Y$]
+            \begin{align*}
+                &1. \quad \text{Assume } X \\
+                &2. \quad \hspace{1cm} \text{Suppose } W \land Y \text{ towards a contradiction} \\
+                &3. \quad \hspace{2cm} \text{From } W \land Y, \text{ we can conclude } W \text{ and } Y && \text{($\land - Elimination$)} \\
+                &4. \quad \hspace{2cm} \text{From } W \text{ and } X, \text{ we can conclude } W \land X && \text{($\land - Introduction$)} \\
+                &5. \quad \hspace{2cm} \text{From } W \land X, \text{ we can apply } (W \land X) \rightarrow \neg Y \text{ and conclude } \neg Y && \text{(Application)} \\
+                &6. \quad \hspace{1cm} \text{Under the assumption of } W \land Y \text{ we proved an impossibility of } Y \text{ and } \neg Y \\
+                &\quad \text{ so therefore } \neg (W \land Y) && \text{(Proof By Contradiction)} \\
+                &7. \quad \text{Under the assumption of } X, \text{ we proved } \neg (W \land Y), \text{ so therefore } X \rightarrow \neg (W \land Y) && \text{(Direct Proof)}
+            \end{align*}
+        \end{proof}
+        \item
+        Claim: $U \rightarrow V, \neg V \vdash \neg (U \land W)$ \\
+        Goal: $\neg (U \land W)$
+        \begin{proof}[Assume $U \rightarrow V, \neg V$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Suppose } U \land W \text{ towards a contradiction} \\
+                &3. \quad \hspace{1cm} \text{From } U \land W, \text{ we can conclude } U \text{ and } W && \text{($\land - Elimination$)} \\
+                &4. \quad \hspace{1cm} \text{From } U, \text{ we can apply } U \rightarrow V \text{ and conclude } V && \text{(Application)} \\
+                &5. \quad \text{Under the assumption of } U \land W \text{ we proved an impossibility of } V \text{ and } \neg V \\
+                &\quad \text{ so therefore } \neg (U \land W) && \text{(Proof By Contradiction)}
+            \end{align*}
+        \end{proof}
+        \item With the truth assignment ($U = false$, $V = false, W = true$), the proof is invalid.
+        \item
+        Claim: $U \rightarrow V, W \rightarrow V, \neg V \vdash \neg U \land \neg W$ \\
+        Goal: $\neg U \land \neg W$
+        \begin{proof}[Assume $U \rightarrow V, W \rightarrow V, \neg V$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Suppose } U \text{ towards a contradiction} \\
+                &3. \quad \hspace{1cm} \text{From } U, \text{ we can apply } U \rightarrow V \text{ and conclude } V && \text{(Application)} \\
+                &4. \quad \text{Under the assumption of } U \text{ we proved an impossibility of } V \text{ and } \neg V \\
+                &\quad \text{ so therefore } \neg U && \text{(Proof By Contradiction)} \\
+                &5. \quad Subproof \\
+                &6. \quad \hspace{1cm} \text{Suppose } W \text{ towards a contradiction} \\
+                &7. \quad \hspace{1cm} \text{From } W, \text{ we can apply } W \rightarrow V \text{ and conclude } V && \text{(Application)} \\
+                &8. \quad \text{Under the assumption of } U \text{ we proved an impossibility of } V \text{ and } \neg V \\
+                &\quad \text{ so therefore } \neg W && \text{(Proof By Contradiction)} \\
+                &9. \quad \text{From } \neg U \text{ and } \neg W, \text{ we can conclude } \neg U \land \neg W && \text{($\land - Introduction$)}
+            \end{align*}
+        \end{proof}
+    \end{enumerate}
+    \item Question Three
+    \begin{enumerate}
+        \item This would be true because the main connective in this statement holds the same meaning as the word "and".
+        \item This would not be the case, as there are no assignments that satisfy both $A$ and $\neg A$, but there are assignments that satisfy $B \leftrightarrow (X \oplus \neg Q)$.
+        \item This argument would be valid for the reason that there are no assignments where the premises are satisfied and the conclusion is not.
+        \item Yes, it would be possible but only if the premises were contradictions as well.
+        \item Yes, this would be possible but only if that other formula was also a contradiction.
+    \end{enumerate}
+    \item Question Four \\
+    Claim: $\vdash P \lor \neg P$ \\
+    Goal: $P \lor \neg P$
+    \begin{proof}
+        \begin{align*}
+            &1. \quad \text{Suppose } \neg (P \lor \neg P) \text{ towards a contradiction} \\
+            &2. \quad \hspace{1cm} \text{Suppose } P \text{ towards a contradiction} \\
+            &3. \quad \hspace{2cm} \text{From } P, \text{ we can conclude } P \lor \neg P && \text{(Weakening)} \\
+            &4. \quad \hspace{1cm} \text{Under the assumption of } P \text{ we proved an impossibility of } \\
+            &(P \lor \neg P) \land \neg (P \lor \neg P) \text{ so therefore } \neg P && \text{(Proof By Contradiction)} \\
+            &5. \quad \hspace{1cm} \text{From } P, \text{ we can conclude } P \lor \neg P && \text{(Weakening)} \\
+            &6. \quad \text{Under the assumption of } \neg (P \lor \neg P) \text{ we proved and impossibility of } \\
+            &(P \lor \neg P) \land \neg (P \lor \neg P), \text{ so therefore } P \lor \neg P && \text{(Proof By Contradiction)}
+        \end{align*}
+    \end{proof}
+    \item Question Five
+    \begin{enumerate}
+        \item
+        Claim: $(A \rightarrow B) \rightarrow C \equiv (\neg A \rightarrow C) \land (B \rightarrow C)$
+        \begin{proof}[Pf: Assume $(A \rightarrow B) \rightarrow C \equiv (\neg A \rightarrow C) \land (B \rightarrow C)$]
+            \begin{align*}
+                &1. \quad (A \rightarrow B) \rightarrow C && \equiv \neg (\neg A \lor B) \lor C && \text{(Material Implication)}\\
+                &2. \quad && \equiv (\neg \neg A \land \neg B) \lor C && \text{(De Morgan's)} \\
+                &3. \quad && \equiv (A \land \neg B) \lor C && \text{(Double Negation)} \\
+                &4. \quad (\neg A \rightarrow C) \land (B \rightarrow C) && \equiv (\neg \neg A \lor C) \land (\neg B \lor C) && \text{(Material Implication)} \\
+                &5. \quad && \equiv (A \lor C) \land (\neg B \lor C) && \text{(Double Negation)} \\
+                &6. \quad && \equiv (A \land \neg B) \lor C && \text{(Distributive)}
+            \end{align*}
+        \end{proof}
+        \item With the truth assignment ($A = true$, $B = false$, $C = false$), the two formulas are not equivlaent.
+        \item With the truth assignment ($W = true$, $X = false$, $Y = true$, $Z = false$), the two formulas are not equivlaent.
+        \item
+        Claim: $\neg ((W \land \neg X) \rightarrow (\neg Y \lor Z)) \equiv (Y \land \neg Z) \land (W \land \neg X)$
+        \begin{proof}[Pf: Assume $\neg ((W \land \neg X) \rightarrow (\neg Y \lor Z)) \equiv (Y \land \neg Z) \land (W \land \neg X)$]
+            \begin{align*}
+                &1. \quad \neg ((W \land \neg X) \rightarrow (\neg Y \lor Z)) && \equiv \neg (\neg (W \land \neg X) \lor (\neg Y \lor Z)) && \text{(Material Implication)} \\
+                &2. \quad && \equiv \neg ((\neg W \lor \neg \neg X) \lor (\neg Y \lor Z)) && \text{(De Morgan's)} \\
+                &3. \quad && \equiv (\neg (\neg W \lor \neg \neg X) \land \neg (\neg Y \lor Z)) && \text{(De Morgan's)} \\
+                &4. \quad && \equiv (\neg (\neg W \lor X) \land \neg (\neg Y \lor Z)) && \text{(Double Negation)} \\
+                &5. \quad && \equiv (\neg \neg W \land \neg X) \land (\neg \neg Y \land \neg Z) && \text{(De Morgan's)} \\
+                &6. \quad && \equiv (W \land \neg X) \land (Y \land \neg Z) && \text{(Double Negation)} \\
+                &7. \quad && \equiv (Y \land \neg Z) \land (W \land \neg X) && \text{(Commutative)}
+            \end{align*}
+        \end{proof}
+        \item
+        Claim: $P \land (\neg Q \rightarrow R) \equiv (P \rightarrow \neg R) \rightarrow (P \land Q)$
+        \begin{proof}[Pf: Assume $P \land (\neg Q \rightarrow R) \equiv (P \rightarrow \neg R) \rightarrow (P \land Q)$]
+            \begin{align*}
+                &1. \quad P \land (\neg Q \rightarrow R) && \equiv P \land (\neg \neg Q \lor R) && \text{(Material Implication)} \\
+                &2. \quad && \equiv P \land (Q \lor R) && \text{(Double Negation)} \\
+                &3. \quad (P \rightarrow \neg R) \rightarrow (P \land Q) && \equiv \neg (\neg P \lor \neg R) \lor (P \land Q) && \text{(Material Implication)} \\
+                &4. \quad && \equiv (\neg \neg P \land \neg \neg R) \lor (P \land Q) && \text{(De Morgan's)} \\
+                &5. \quad && \equiv (P \land R) \lor (P \land Q) && \text{(Double Negation)} \\
+                &6. \quad && \equiv P \land (Q \lor R) && \text{(Distributive)}
+            \end{align*}
+        \end{proof}
+        \item
+        Claim: $(M \rightarrow N) \land (\neg M \rightarrow N) \equiv N$
+        \begin{proof}[Pf: Assume $(M \rightarrow N) \land (\neg M \rightarrow N) \equiv N$]
+            \begin{align*}
+                &1. \quad (M \rightarrow N) \land (\neg M \rightarrow N) && \equiv (\neg M \lor N) \land (\neg \neg M \lor N) && \text{(Material Implication)} \\
+                &2. \quad && \equiv N \lor (\neg M \land \neg \neg M) && \text{(Distributive)} \\
+                &3. \quad && \equiv N \lor (\neg M \land M) && \text{(Double Negation)} \\
+                &4. \quad && \equiv N \lor \bot && \text{(Contradiction)} \\
+                &5. \quad && \equiv N && \text{($\lor - Identity$)} \\
+            \end{align*}
+        \end{proof}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

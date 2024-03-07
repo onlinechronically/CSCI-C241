@@ -1,0 +1,225 @@
+\documentclass{article}
+% \usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\title{HW3 (CSCI-C241)}
+\author{Lillie Donato}
+\date{30 January 2024}
+
+\usepackage{geometry}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Question One
+    \begin{enumerate}
+        \item This proof is not valid, for the reason that in line six, they are not acknowledging what was assumed in the subproof.
+        \item This proof is valid.
+        \item This proof is not valid, because after they do cases they wrote their direct proof incorrectly.
+        \item This proof is valid.
+        \item This proof is valid
+        \item This proof is not valid, for that reason that when using $\lor - Elimination$, you must have a subproof for each case.
+    \end{enumerate}
+
+    \item Question Two
+    \begin{enumerate}
+        \item
+        Claim: $(P \land Q) \rightarrow R, P \land S, \neg \neg Q \vdash R$ \\
+        Goal: $R$ \\
+        Want: $P \land Q$ \text{(Application)}
+    
+        \begin{proof}[Pf: Assume $(P \land Q) \rightarrow R, P \land S, \neg \neg Q$]
+            \begin{align*}
+                % &1. \quad \text{Assume } \neg \neg Q \\
+                % &2. \quad \text{Therefore } && \text{Meow } \\
+                &1. \quad \text{Since we know } \neg \neg Q, \text{ we can conclude } Q. && \text{(Double Negative)} \\
+                &2. \quad \text{Since we know } P \land S, \text{ we can conclude } P. && \text{($\land - Elimination$)} \\
+                &3. \quad \text{From } P \text{ and } Q, \text{ we can conclude } P \land Q. && \text{($\land - Introduction$)} \\
+                &4. \quad \text{From } (P \land Q) \rightarrow R, P \text{ and } Q, \text{ we can conclude } R. && \text{($\rightarrow - Elimination$)} \\
+                % Under the assumption of 
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $P \rightarrow \neg Q, \neg Q \vdash \neg \neg P$ \\
+        Goal: $\neg \neg P$ \\
+        \begin{tabular}{| c | c | c | c | c |}
+            \hline
+            $P$ & $Q$ & $P \rightarrow \neg Q$ & $\neg Q$ & $\neg \neg P$ \\
+            \hline
+            T & T & F & F & n/a \\
+            \hline
+            T & F & T & T & T \\
+            \hline
+            F & T & T & F & n/a \\
+            \hline
+            F & F & T & T & F \\
+            \hline
+        \end{tabular} \\
+
+        This is not a valid argument, as shown in the following truth assignment:
+        
+        $P$ = $false$ \\
+        $Q$ = $false$ \\
+        $P \rightarrow \neg Q$ = $true$ \\
+        $\neg Q$ = $true$ \\
+        $\neg \neg P$ = $false$ \\
+
+        \item
+        Claim: $(A \land B) \rightarrow C, B, A \land \neg D \vdash C \land \neg D$ \\
+        Goal: $C \land \neg D$
+        \begin{proof}[Pf: Assume $(A \land B) \rightarrow C, B, A \land \neg D$]
+            \begin{align*}
+                &1. \quad \text{From } A \land \neg D, \text{ we can conclude } A \text{ and } \neg D. && \text{($\land - Elimination$)} \\
+                &2. \quad \text{From } A \text{ and } B, \text{ we can conclude } A \land B. && \text{($\land - Introduction$)} \\
+                &3. \quad \text{From } A \land B, \text{ we can apply } (A \land B) \rightarrow C \text{ and conclude } C. && \text{($Application$)} \\
+                &4. \quad \text{From } A \text{ and } \neg D, \text{ we can conclude } A \land \neg D. && \text{($\land - Introduction$)} \\
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $(A \land B) \rightarrow C, B \vdash (A \land \neg D) \rightarrow (C \land \neg D)$ \\
+        Goal: $(A \land \neg D) \rightarrow (C \land \neg D)$
+        \begin{proof}[Pf: Assume $(A \land B) \rightarrow C, B$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Assume } A \land \neg D. \\
+                &3. \quad \hspace{1cm} \text{From } A \land \neg D, \text{ we can conclude } A \text{ and } \neg D. && \text{($\land - Elimination$)} \\
+                &3. \quad \hspace{1cm} \text{From } A \text{ and } B, \text{ we can conclude } A \land B. && \text{($\land - Introduction$)} \\
+                &4. \quad \hspace{1cm} \text{From } A \land B, \text{ we can apply } (A \land B) \rightarrow C \text{ and conclude } C. && \text{($Application$)} \\
+                &5. \quad \hspace{1cm} \text{From } A \land \neg D \text{ we can apply } (A \land \neg D) \rightarrow (C \land \neg D) \text{ and conclude } C \land \neg D. && \text{($Application$)} \\
+                &6. \quad \text{Under the assumption of } A \land \neg D, \text{ we proved } C \text{ and } \neg D. && \text{(Direct Proof)}
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $\neg P \rightarrow (Q \land R) \vdash (\neg P \land S) \rightarrow (R \land S)$ \\
+        Goal: $(\neg P \land S) \rightarrow (R \land S)$
+        \begin{proof}[Pf: Assume $\neg P \rightarrow (Q \land R)$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Assume } \neg P \land S. \\
+                &3. \quad \hspace{1cm} \text{From } \neg P \land S, \text{ we can conclude } \neg P \text{ and } S. && \text{($\land - Elimination$)} \\
+                &4. \quad \hspace{1cm} \text{From } \neg P, \text{ we can apply } \neg P \rightarrow (Q \land R) \text{ and conclude } Q \land R. && \text{($Application$)} \\
+                &5. \quad \hspace{1cm} \text{From } Q \land R, \text{ we can conclude } R. && \text{($\land - Elimination$)} \\
+                &6. \quad \hspace{1cm} \text{From } \neg P \text{ and } S, \text{ we can conclude } \neg P \land S. && \text{($\land - Introduction$)} \\
+                &7. \quad \hspace{1cm} \text{From } Q \land R \text{ we can conclude } Q \text{ and } R. && \text{($\land - Elimination$)} \\
+                &8. \quad \hspace{1cm} \text{From } R \text{ and } S, \text{ we can conclude } R \land S. && \text{($\land - Introduction$)} \\
+                &9. \quad \text{Under the assumption } \neg P \text{ and } S, \text{ we proved } R \land S, \text{ therefore } (\neg P \land S) \rightarrow (R \land S). && \text{(Direct Proof)} \\
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $X \land (X \rightarrow (Z \land Y)) \vdash X \land Y$ \\
+        Goal: $X \land Y$
+        \begin{proof}[Pf: Assume $X \land (X \rightarrow (Z \land Y))$]
+            \begin{align*}
+                &1. \quad \text{From } X \land (X \rightarrow (Z \land Y)) \text{ we can conclude } X \text{ and } X \rightarrow (Z \land Y) \\
+                &2. \quad \text{From } X \text{ we can apply } X \rightarrow (Z \land Y) \text{ and conclude } Z \land Y. && \text{($Application$)} \\
+                &3. \quad \text{From } Z \land Y \text{ we can conclude } Y. && \text{($\land - Elimination$)} \\
+                &4. \quad \text{From } X \text{ and } Y \text{ we can conclude } X \land Y. && \text{($\land - Introduction$)} \\
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $\vdash (X \land (X \rightarrow (Z \land Y))) \rightarrow (X \land Y)$ \\
+        Goal: $(X \land (X \rightarrow (Z \land Y))) \rightarrow (X \land Y)$
+        \begin{proof}[Proof]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Assume } X \land (X \rightarrow (Z \land Y)) \\
+                &3. \quad \hspace{1cm} \text{From } X \land (X \rightarrow (Z \land Y)) \text{ we can conclude } X \text{ and } X \rightarrow (Z \land Y) \\
+                &4. \quad \hspace{1cm} \text{From } X \text{ we can apply } X \rightarrow (Z \land Y) \text{ and conclude } Z \land Y. && \text{($Application$)} \\
+                &5. \quad \hspace{1cm} \text{From } Z \land Y \text{ we can conclude } Y. && \text{($\land - Elimination$)} \\
+                &6. \quad \hspace{1cm} \text{From } X \text{ and } Y \text{ we can conclude } X \land Y. && \text{($\land - Introduction$)} \\
+                &7. \quad \text{Under the assumption } X \land (X \rightarrow (Z \land Y)), \text{ we proved } (X \land Y), \\
+                &\quad \text{ therefore } (X \land (X \rightarrow (Z \land Y))) \rightarrow (X \land Y) && \text{(Direct Proof)} \\
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $P \lor (Q \land \neg \neg R), P \rightarrow R \vdash R$ \\
+        Goal: $R$
+        \begin{proof}[Pf: Assume $P \lor (Q \land \neg \neg R), P \rightarrow R$]
+            \begin{align*}
+                &1. \quad \text{Case 1: } P \\
+                &2. \quad \hspace{1cm} \text{From } P, \text{ we can apply } P \rightarrow R, \text{ and conclude } R. && \text{($Application$)} \\
+                &3. \quad \text{Case 2: } Q \land \neg \neg R \\
+                &4. \quad \hspace{1cm} \text{From } Q \land \neg \neg R, \text{ we can conclude } \neg \neg R. && \text{($\land - Elimination$)} \\
+                &5. \quad \hspace{1cm} \text{From } \neg \neg R, \text{ we can conclude } R. && \text{(Double Negation)} \\
+                &6. \quad \text{In either case of } P \lor (Q \land \neg \neg R), \text{ we proved } R, \text{ so } R \text{ is true in general.} && \text{(Proof By Cases)}
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $C \rightarrow (D \lor E), D \rightarrow E, \neg \neg C \vdash E \land C$ \\
+        Goal: $E \land C$
+        \begin{proof}[Pf: Assume $C \rightarrow (D \lor E), D \rightarrow E, \neg \neg C$]
+            \begin{align*}
+                &1. \quad \text{From } \neg \neg C, \text{ we can conclude } C. && \text{(Double Negation)} \\
+                &2. \quad \text{From } C, \text{ we can apply } C \rightarrow (D \lor E), \text{ and conclude } D \lor E. && \text{($Application$)} \\
+                &3. \quad \text{Case 1: } D \\
+                &4. \quad \hspace{1cm} \text{From } D, \text{ we can apply } D \rightarrow E, \text{ and conclude } E. && \text{($Application$)} \\
+                &5. \quad \text{Case 2: } E \\
+                &6. \quad \hspace{1cm} \text{We know } E. \\
+                &7. \quad \text{In either case of } D \lor E, \text{ we proved } E, \text{ so } E \text{ is true in general.} && \text{(Proof By Cases)} \\
+                &8. \quad \text{From } E \text{ and } C, \text{ we can conclude } E \land C. && \text{($\land - Introduction$)}
+            \end{align*}
+        \end{proof}
+
+        \item
+        Claim: $X \rightarrow Y \vdash (X \lor Z) \rightarrow Y$ \\
+        Goal: $(X \lor Z) \rightarrow Y$ \\
+        \begin{tabular}{| c | c | c | c | c |}
+            \hline
+            $X$ & $Y$ & $Z$ & $X \rightarrow Y$ & $(X \lor Z) \rightarrow Y$ \\
+            \hline
+            $T$ & $T$ & $T$ & $T$ & true \\
+            \hline
+            $T$ & $T$ & $F$ & $T$ & true \\
+            \hline
+            $T$ & $F$ & $T$ & $F$ & n/a \\
+            \hline
+            $T$ & $F$ & $F$ & $F$ & n/a \\
+            \hline
+            $F$ & $T$ & $T$ & $T$ & true \\
+            \hline
+            $F$ & $T$ & $F$ & $T$ & true \\
+            \hline
+            $F$ & $F$ & $T$ & $T$ & false \\
+            \hline
+            $F$ & $F$ & $F$ & $T$ & true \\
+            \hline
+        \end{tabular}
+
+        This is not a valid argument, as shown in the following truth assignment:
+        
+        $X$ = $false$ \\
+        $Y$ = $false$ \\
+        $Z$ = $true$ \\
+        $X \rightarrow Y$ = $true$ \\
+        $(X \lor Z) \rightarrow Y$ = $false$ \\
+
+        \item
+        Claim: $J \rightarrow K \vdash (J \lor \neg \neg K) \rightarrow K$ \\
+        Goal: $(J \lor \neg \neg K) \rightarrow K$
+        \begin{proof}[Pf: Assume $J \rightarrow K$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Assume } J \lor \neg \neg K. \\
+                &3. \quad \hspace{1cm} \text{Case 1: } J \\
+                &4. \quad \hspace{2cm} \text{From } J, \text{ we can apply } J \rightarrow K, \text{ and conclude } K. && \text{($Application$)} \\
+                &5. \quad \hspace{1cm} \text{Case 2: } \neg \neg K \\
+                &6. \quad \hspace{2cm} \text{From } \neg \neg K, \text{ we can conclude } K. && \text{(Double Negation)} \\
+                &7. \quad \hspace{1cm} \text{In either case of } J \lor \neg \neg K, \text{ we proved } K, \text{ so } K \text{ is true in general.} && \text{(Proof By Cases)} \\
+                &8. \quad \text{Under the assumption } J \lor \neg \neg K, \text{ we proved } K, \text{ so therefore } (J \lor \neg \neg K) \rightarrow K. && \text{(Direct Proof)}\\
+            \end{align*}
+        \end{proof}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

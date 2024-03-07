@@ -1,0 +1,65 @@
+\documentclass{article}
+% \usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\title{HW3 (Corrections) (CSCI-C241)}
+\author{Lillie Donato}
+\date{4 February 2024}
+
+\usepackage{geometry}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item Question One
+    \begin{itemize}
+        \item 1c
+        
+        This proof is valid
+        \item 1e
+        
+        This proof is not valid, as they are doing proof by cases, with cases that are part of an implication premise (meaning it's something that they do not have).
+    \end{itemize}
+
+    \item Question Two
+    \begin{itemize}
+        \item
+        2d \\
+        Claim: $(A \land B) \rightarrow C, B \vdash (A \land \neg D) \rightarrow (C \land \neg D)$ \\
+        Goal: $(A \land \neg D) \rightarrow (C \land \neg D)$
+        \begin{proof}[Pf: Assume $(A \land B) \rightarrow C, B$]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Assume } A \land \neg D. \\
+                &3. \quad \hspace{1cm} \text{From } A \land \neg D, \text{ we can conclude } A \text{ and } \neg D. && \text{($\land - Elimination$)} \\
+                &3. \quad \hspace{1cm} \text{From } A \text{ and } B, \text{ we can conclude } A \land B. && \text{($\land - Introduction$)} \\
+                &4. \quad \hspace{1cm} \text{From } A \land B, \text{ we can apply } (A \land B) \rightarrow C \text{ and conclude } C. && \text{($Application$)} \\
+                &5. \quad \hspace{1cm} \text{From } C \text{ and } \neg D, \text{ we can conclude } C \land \neg D. && \text{($\land - Introduction$)} \\
+                &6. \quad \text{Under the assumption of } A \land \neg D, \text{ we proved } C \text{ and } \neg D. && \text{(Direct Proof)}
+            \end{align*}
+        \end{proof}
+        
+        \item
+        2g \\
+        Claim: $\vdash (X \land (X \rightarrow (Z \land Y))) \rightarrow (X \land Y)$ \\
+        Goal: $(X \land (X \rightarrow (Z \land Y))) \rightarrow (X \land Y)$
+        \begin{proof}[Proof]
+            \begin{align*}
+                &1. \quad Subproof \\
+                &2. \quad \hspace{1cm} \text{Assume } X \land (X \rightarrow (Z \land Y))\\
+                &3. \quad \hspace{1cm} \text{From } X \land (X \rightarrow (Z \land Y)) \text{ we can conclude } X \text{ and } X \rightarrow (Z \land Y) && \text{($\land - Elimination$)}  \\
+                &4. \quad \hspace{1cm} \text{From } X \text{ we can apply } X \rightarrow (Z \land Y) \text{ and conclude } Z \land Y. && \text{($Application$)} \\
+                &5. \quad \hspace{1cm} \text{From } Z \land Y \text{ we can conclude } Y. && \text{($\land - Elimination$)} \\
+                &6. \quad \hspace{1cm} \text{From } X \text{ and } Y \text{ we can conclude } X \land Y. && \text{($\land - Introduction$)} \\
+                &7. \quad \text{Under the assumption } X \land (X \rightarrow (Z \land Y)), \text{ we proved } (X \land Y), \\
+                &\quad \text{ therefore } (X \land (X \rightarrow (Z \land Y))) \rightarrow (X \land Y) && \text{(Direct Proof)} \\
+            \end{align*}
+        \end{proof}
+    \end{itemize}
+\end{itemize}
+
+\end{document}

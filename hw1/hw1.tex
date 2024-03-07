@@ -1,0 +1,334 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{HW1 (CSCI-C241)}
+\author{Lillie Donato}
+\date{16 January 2024}
+
+\begin{document}
+
+\maketitle
+
+% \section{Introduction}
+\begin{enumerate}
+    \item Question One
+    \begin{enumerate}
+        \item b, c, h, i, k, m, o, p
+    \end{enumerate}
+    \item Question Two
+    \begin{enumerate}
+        \item
+        P = I had good intentions
+        
+		Q = I had the highest hopes
+        
+		$P \land Q$
+
+        \item
+        P = The card has the same color as the previous card
+
+        Q = The card has the same number as the previous card
+
+        $P \lor Q$
+        \item
+        P = I will eat my tie
+
+        Q = The bears win the world series
+        
+        $Q \rightarrow P$
+        \item
+        P = It smelt funny
+
+        Q = He ate it anyway
+
+        $P \land Q$
+        \item
+        P = All prizes will be awarded
+
+        Q = Enough eligible entries are received
+
+        $Q \rightarrow P$
+        \item
+        P = Participants were not timed on this task
+
+        Q = Most finished in less than 8 minutes
+
+        $P \land Q$
+        \item
+        P = The image is recovered
+
+        Q = The receiver has an authenticated secret key
+
+        $P \leftrightarrow Q$
+        \item
+        P = The printer can hold a black ink cartridge
+
+        Q = The printer can hold a color cartridge
+
+        $P \oplus Q$
+        \item
+        P = Changing batteries is a tedious task
+
+        Q = The nodes are deployed in a remote environment
+
+        R = The nodes are deployed in a hostile environment
+
+        $(Q \lor R) \rightarrow P$
+        \item
+        P = The people will give up their arms
+
+        Q = The tyrant resigns
+
+        R = We get our money back
+
+        $(Q \land R) \rightarrow P$
+        \item
+        P = The Lyapunov function exists
+
+        Q = The system is stable
+
+        $P \rightarrow Q$
+        \item
+        P = The Turing Test was passed
+
+        Q = The individal is intelligent
+
+        $Q \rightarrow P$
+        \item
+        REVIEW:
+
+        P = There are no antibodies in the subject’s body
+
+        Q = The subject is not susceptible to an infection
+
+        $P \rightarrow Q$
+        \item
+        P = Disciplinary knowledge is used
+
+        Q = Organizational skills is used
+
+        R = The teaching is considered effective
+
+        $(P \land Q) \rightarrow R$
+        \item
+        P = Rice
+
+        Q = Mashed Potatoes
+
+        R = Fried Plantains
+
+        $P \oplus Q \oplus R$
+        \item
+        P = I am ready
+
+        C = Here I come
+
+        $(P \lor \neg P) \rightarrow C$
+        \item
+        M = Someone makes a false move
+
+        X = The whole thing explodes
+
+        $M \rightarrow X$
+    \end{enumerate}
+    \item Question Three
+    \begin{enumerate}
+        \item The command returns an integer or displays a message.
+        \item The command returns an integer if and only if a message is displayed.
+        \item The command returns an integer if there is not an exception thrown.
+        \item The command does not throw an exception and does not display a message.
+        \item The command will end up displaying a message with a number returned or an exception will be thrown.
+    \end{enumerate}
+    \item Question Four
+    \begin{enumerate}
+        \item This is not an accurate translation because the english statement is causation and the translation is implication.
+        \item This is not an accurate translation because it is still possible for one of the atomic propositions to be true even when the other is false.
+        \item I do not believe there is any way to translate this statement into propositional logic, due to the fact that I am not aware of any operators that show causation.
+    \end{enumerate}
+    \item Question Five
+    \begin{enumerate}
+        \item
+        A = true
+
+        B = true
+
+        $A \rightarrow \neg B$ = $true \rightarrow \neg false$ = $true \rightarrow true$ = $true$
+
+        \item
+        The statement is not satisfiable as shown in the following truth table:
+
+        \begin{tabular}{| c | c | c |}
+            \hline
+            A & B & $(A \land \neg A) \lor (B \land \neg B)$ \\
+            \hline
+            true & true & false \\
+            \hline
+            true & false & false \\
+            \hline
+            false & true & false \\
+            \hline
+            false & false & false \\
+            \hline
+        \end{tabular}
+
+        \item
+        X = false
+
+        $X \rightarrow \neg X$ = $false \rightarrow \neg false$ = $false \rightarrow true$ = $true$
+        \item
+        A = false
+
+        B = true
+
+        $\neg A \rightarrow \neg (A \lor B)$ = $\neg true \rightarrow \neg (true \lor false)$ = $false \rightarrow true$ = $false$
+        \item
+        \begin{enumerate}
+            \item
+            A = true
+
+            B = true
+
+            $\neg A \rightarrow \neg (A \lor B)$ = $\neg true \rightarrow \neg (true \lor true)$ = $false \rightarrow false$ = $true$
+
+            \item
+            A = false
+
+            B = true
+
+            $\neg A \rightarrow \neg (A \lor B)$ = $\neg false \rightarrow \neg (false \lor true)$ = $true \rightarrow false$ = $false$
+        \end{enumerate}
+        \item
+        The statement is a tautology as shown in the following truth table:
+
+        \begin{tabular}{| c | c | c | c |}
+            \hline
+            A & B & C & $((A \rightarrow B) \land (C \lor \neg B)) \rightarrow (A \rightarrow C)$ \\
+            \hline
+            true & true & true & true \\
+            \hline
+            true & true & false & true \\
+            \hline
+            true & false & true & true \\
+            \hline
+            true & false & false & true \\
+            \hline
+            false & true & true & true \\
+            \hline
+            false & true & false & true \\
+            \hline
+            false & false & true & true \\
+            \hline
+            false & false & false & true \\
+            \hline
+        \end{tabular}
+        \item
+        A = true
+
+        B = true
+
+        C = true
+        
+        $((A \rightarrow B) \land (C \lor \neg B)) \rightarrow (A \rightarrow C) = ((true \rightarrow true) \land (true \lor false)) \rightarrow (true \rightarrow true)$ = $(true \land true) \rightarrow true$ = $true \rightarrow true$ = $true$
+        \item
+        The statement is not a contingency as shown in the following truth table:
+
+        \begin{tabular}{| c | c | c | c |}
+            \hline
+            A & B & C & $((A \rightarrow B) \land (C \lor \neg B)) \rightarrow (A \rightarrow C)$ \\
+            \hline
+            true & true & true & true \\
+            \hline
+            true & true & false & true \\
+            \hline
+            true & false & true & true \\
+            \hline
+            true & false & false & true \\
+            \hline
+            false & true & true & true \\
+            \hline
+            false & true & false & true \\
+            \hline
+            false & false & true & true \\
+            \hline
+            false & false & false & true \\
+            \hline
+        \end{tabular}
+        \item
+        A = true
+
+        B = true
+
+        $(A \rightarrow B) \rightarrow (\neg A \rightarrow \neg B) = (true \rightarrow true) = true$
+        \item
+        A = false
+
+        B = true
+
+        $(A \rightarrow B) \rightarrow (\neg A \rightarrow \neg B) = (false \rightarrow true) \rightarrow (true \rightarrow false) = true \rightarrow false = false$
+        \item
+        A = false
+
+        B = true
+
+        C = false
+
+        D = true
+
+        $\neg A \lor ((D \lor \neg D) \rightarrow ((B \land \neg B) \leftrightarrow (C \rightarrow C))) = \neg false \lor ((true \lor \neg true) \rightarrow ((true \land \neg true) \leftrightarrow (false \rightarrow false))) = true \lor (true \rightarrow (false \leftrightarrow true)) = true$
+        % The statement is a contingency as shown in the following truth table:
+
+        % \begin{tabular}{| c | c | c |}
+        %     \hline
+        %     A & B & $\neg A \rightarrow \neg (A \lor B)$ \\
+        %     \hline
+        %     true & true & false \\
+        %     \hline
+        %     true & false & true \\
+        %     \hline
+        %     false & true & false \\
+        %     \hline
+        %     false & false & true \\
+        %     \hline
+        % \end{tabular}
+    \end{enumerate}
+    \item Question Six
+    \begin{enumerate}
+        \item
+        A = true
+
+        B = false
+        \begin{enumerate}
+            \item $A \land \neg B = true \land \neg false = true \land true = true$
+            \item $A \lor B = true \lor false = true$
+        \end{enumerate}
+        \item
+        The statement is inconsistent as shown in the following truth table:
+
+        \begin{tabular}{| c | c | c | c | c |}
+            \hline
+            P & Q & $P \rightarrow Q$ & $P$ & $\neg Q$ \\
+            \hline
+            true & true & true & true & false \\
+            \hline
+            true & false & false & true & true \\
+            \hline
+            false & true & true & false & false \\
+            \hline
+            false & false & true & false & true \\
+            \hline
+        \end{tabular}
+        \item
+        H = false
+
+        E = false
+
+        G = true
+        \begin{enumerate}
+            \item $H \rightarrow E = false \rightarrow false = true$
+            \item $\neg G \leftrightarrow H = \neg true \leftrightarrow false = false \leftrightarrow false = true$
+            \item $G = true$
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

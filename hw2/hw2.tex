@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{HW2 (CSCI-C241)}
+\author{Lillie Donato}
+\date{23 January 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Question One
+    \begin{enumerate}
+        \item The pair ($A \equiv A \lor A$) is logically equivalent as shown in the truth table below:
+        
+        \begin{tabular}{| c | c |}
+            \hline
+            A & $A \lor A$ \\
+            \hline
+            true & true \\
+            \hline
+            false & false \\
+            \hline
+        \end{tabular}
+        \item The pair ($A \equiv A \oplus A$) is not logically equivalent as shown in the truth assignment below:
+        
+        A = true
+        
+        $A \equiv A \oplus A$
+
+        $true \equiv true \oplus true$
+
+        $true \equiv false$
+        \item The pair ($A \rightarrow B \equiv \neg A \rightarrow \neg B$) is not logically equivalent as shown in the truth assignment below:
+        
+        A = true
+        
+        B = false
+
+        $A \rightarrow B \equiv \neg A \rightarrow \neg B$
+
+        $true \rightarrow false \equiv false \rightarrow true$
+
+        $false \equiv true$
+        % 
+        \item The pair ($P \leftrightarrow \neg Q \equiv (P \land \neg Q) \lor (\neg P \land Q)$) is logically equivalent as shown in the truth table below:
+        
+        \begin{tabular}{| c | c | c | c |}
+            \hline
+            P & Q & $P \leftrightarrow \neg Q$ & $(P \land \neg Q) \lor (\neg P \land Q)$ \\
+            \hline
+            true & true & false & false \\
+            \hline
+            true & false & true & true \\
+            \hline
+            false & true & true & true \\
+            \hline
+            false & false & false & false \\
+            \hline
+        \end{tabular}
+        \item
+        The pair ($A \lor B \equiv P \lor Q$) is not logically equivalent as shown in the truth assignment below:
+
+        A = true
+
+        B = true
+
+        P = false
+
+        Q = false
+
+        $A \lor B \equiv P \lor Q$
+
+        $true \lor true \equiv false \lor false$
+        
+        $true \equiv false$
+        \item The pair ($A \lor \neg A \equiv P \rightarrow P$) is logically equivalent as shown in the truth table below:
+        
+        \begin{tabular}{| c | c | c | c |}
+            \hline
+            A & P & $A \lor \neg A$ & $P \rightarrow P$ \\
+            \hline
+            true & true & true & true \\
+            \hline
+            true & false & true & true \\
+            \hline
+            false & true & true & true \\
+            \hline
+            false & false & true & true \\
+            \hline
+        \end{tabular}
+    \end{enumerate}
+    \item Question Two
+    \begin{enumerate}
+        \item
+        The argument is not logically equivalent as shown in the truth assignment below:
+
+        A = true
+
+        B = false
+
+        $A \rightarrow B$ = $true \rightarrow false$ = false
+
+        $B \rightarrow A$ = $false \rightarrow true$ = true
+
+        $A \rightarrow B \equiv B \rightarrow A$ = $false \equiv true$ = false
+        \item
+        The argument is logically equivalent as shows in the truth table below:
+
+        \begin{tabular}{| c | c | c | c |}
+            \hline
+            A & B & $A \rightarrow B$ & $\neg B \rightarrow \neg A$ \\
+            \hline
+            true & true & true & true \\
+            \hline
+            true & false & false & false \\
+            \hline
+            false & true & true & true \\
+            \hline
+            false & false & true & true \\
+            \hline
+        \end{tabular}
+    \end{enumerate}
+    \item Question Three
+    \begin{enumerate}
+        \item
+        This argument is not valid because in the truth assignment below, the premise is true but the conclusion is not:
+        
+        A = false
+
+        B = false
+
+        Premise = $\neg (A \land B) \land \neg A$ = $\neg (false \land false) \land \neg false$ = $true \land true$ = true
+
+        Conclusion = $\neg (B \rightarrow A)$ = $\neg (false \rightarrow false)$ = $\neg true$ = false
+        \item This argument is valid because in the truth table below, each premise that is true, has a corresponding conclusion that is also true:
+        
+        \begin{tabular}{| c | c | c | c | c |}
+            \hline
+            X & Y & $Y \rightarrow X$ & $X \rightarrow Y$ & $\neg Y \land X$ \\
+            \hline
+            true & true & true & true & true \\
+            \hline
+            true & false & true & false & true \\
+            \hline
+            false & true & false & true & false \\
+            \hline
+            false & false & true & true & true \\
+            \hline
+        \end{tabular}
+        \item
+        This argument is not valid because in the truth assignment below, the premise is true but the conclusion is not:
+        
+        P = false
+
+        Q = false
+
+        Premise = $(P \rightarrow \neg Q) \land (\neg Q)$ = $(false \rightarrow true) \land (\neg false)$ = $true \land true$ = true
+
+        Conclusion = $\neg \neg P$ = $\neg \neg false$ = false
+        \item
+        This argument is not valid because in the truth assignment below, the premise is true but the conclusion is not:
+        
+        P = true
+
+        Q = true
+
+        R = false
+
+        Premise = $P \land Q$ = true
+
+        Conclusion = $R$ = false
+    \end{enumerate}
+    \item Question Four
+    \begin{enumerate}
+        \item $A \oplus B$
+        \item $A \lor \neg A$
+        \item This is not possible, because for a formula to be a contingency it must be both satisfiable and not satisfiable, where a contradiction must be only not satisfiable.
+        \item $(A \land B) \lor (\neg A \land \neg B)$
+        \item This is not possible, because for a formula to be a tautology it must be satisfiable for every assignment, where a contingency must be both satisfiable and not satisfiable.
+        \item \{ $P \land \neg Q$, $P$, $\neg Q$, $\neg (\neg P \lor Q)$ \}
+        \item \{ $P \lor \neg Q$, $\neg P \land Q$ \}
+        \item This is not possible, because for a formula to be consistent there must be one assignment where all of the formula's in the set are satisfiable at once, but for a contradiction there must be no satisfiable assignments.
+        \item \{ $(A \lor B) \lor (\neg A \lor \neg B)$, $A \oplus B$ \}
+        \item 
+        \begin{tabular}{c}
+            $P$ \\
+            $Q$ \\
+            \hline
+            $\neg P \land \neg Q$ \\
+        \end{tabular}
+        \item $p = X \lor Y$ and $q = \neg (X \oplus Y)$
+        \item $p = P \lor Q$ and $q = \neg P \oplus \neg Q$
+    \end{enumerate}
+    \item Question Five
+    \begin{enumerate}
+        \item Yes, this is because for a formula to be a tautology means every assignment must be satisfiable, therefore meaning that the formula is satisfiable.
+        \item This is not true, because in order for a formula to be a tautology, each and every assignment must be satisfiable, where for a formula to be satisfiable it only requires one assignment.
+        \item Yes, this is the case because in order for a formula to be a contingency, it must be not only satisfiable but also not satisfiable for a different assignment.
+    \end{enumerate}
+    \item Question Six - all letters true due to that being the only way one can be true
+    \begin{enumerate}
+        \item The formula is valid, because in order for the premise to evaluate to true, both $A$ and $B$ must be true, in turn meaning $C$ also must be true. When looking at the last statement in the premise, if $C$ is true so must $D$ \& $E$. With that being said, if all the letters are true so would the conclusion.
+    \end{enumerate}
+    \item Question Seven
+    \begin{enumerate}
+        \item $(A \land B) \lor (C \rightarrow (D \land E))$ would have a larger truth table due to the truth table for this formula having a greater number of different atomic propositions. Furthermore, the equation to calculate the amount of rows in a truth table, is $2^n$ where n is the number of different atomic propositions.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
