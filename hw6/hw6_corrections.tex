@@ -12,14 +12,99 @@
 
 \title{HW6 Corrections (CSCI-C241)}
 \author{Lillie Donato}
-\date{5 March 2024}
+\date{X March 2024}
 
 \begin{document}
 
 \maketitle
 
-\begin{enumerate}
-    \item 
-\end{enumerate}
+\begin{itemize}
+    \item Question One
+    \begin{itemize}
+        \item 1d \\
+        Claim: $X \subseteq \overline{Y \cap Z}$
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose the sets } X, Y, Z \text{ and } x \in X \\
+                &\quad \text{Assume } (X \cap Y) \subseteq \overline{Z} \\
+                &\quad \hspace{1cm} \text{Suppose towards a contradiction } x \notin \overline{Y \cap Z} \\
+                &\quad \hspace{2cm} \text{Since } x \notin \overline{Y \cap Z} \text{, we know } x \in Y \cap Z \\
+                &\quad \hspace{2cm} \text{Since } x \in Y \cap Z \text{, we know } x \in Y \text{ and } x \in Z \\
+                &\quad \hspace{2cm} \text{Since } x \in X \text{ and } x \in Y \text{, we know } x \in X \cap Y \\
+                &\quad \hspace{2cm} \text{Since } x \in X \cap Y \text{, we know } x \in \overline{Z} \\
+                &\quad \hspace{2cm} \text{Since } x \in \overline{Z} \text{, we know } x \notin Z \\
+                &\quad \hspace{1cm} \text{Under the assumption of } x \notin \overline{Y \cap Z} \text{, we proved an impossibility of } x \in Z \text{ and } x \notin Z, \\
+                &\quad \hspace{1cm} \text{therefore } x \in \overline{Y \cap Z} \nonumber \\
+                &\quad \text{Since } x \in X \text{ and } x \in \overline{Y \cap Z} \text{, we know } X \subseteq \overline{Y \cap Z} \\
+            \end{align}
+        \end{proof}
+        \item 1e \\
+        Claim: $H \cup (J \cap K) \subseteq (H \cup K) \setminus M$
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose the sets } H, J, K, L, M \text{ and } x \in H \cup (J \cap K) \\
+                &\quad \text{Assume } J \subseteq L \setminus M \text{ and } H \subseteq \overline{M} \\
+                &\quad \hspace{1cm} \text{Case 1: } x \in H \\
+                &\quad \hspace{2cm} \text{Since } x \in H \text{ and } H \subseteq \overline{M} \text{, we know } x \in \overline{M} \\
+                &\quad \hspace{2cm} \text{Since } x \in \overline{M} \text{, we know } x \notin M \\
+                &\quad \hspace{2cm} \text{Since } x \in H \text{, we know } x \in H \cup K \\
+                &\quad \hspace{2cm} \text{Since } x \in H \cup K \text{ and } x \notin M \text{, we know } x \in (H \cup K) \setminus M \\
+                &\quad \hspace{1cm} \text{Case 2: } x \in J \cap K \\
+                &\quad \hspace{2cm} \text{Since } x \in J \cap K \text{, we know } x \in J \text{ and } x \in K \\
+                &\quad \hspace{2cm} \text{Since } x \in J \text{ and } J \subseteq L \setminus M \text{, we know } x \in L \setminus M \\
+                &\quad \hspace{2cm} \text{Since } x \in L \setminus M \text{, we know } x \in L \text{ and } x \notin M \\
+                &\quad \hspace{2cm} \text{Since } x \in K \text{, we know } x \in H \cup K \\
+                &\quad \hspace{2cm} \text{Since } x \in H \cup K \text{ and } x \notin M \text{, we know } x \in (H \cup K) \setminus M \\
+                &\quad \text{In either case of } H \cup (J \cap K) \text{, we proved that } x \in (H \cup K) \setminus M \\
+                &\quad \text{Under the assumption of } J \subseteq L \setminus M \text{ and } H \subseteq \overline{M}, \\
+                &\quad \hspace{0.5cm} \text{we proved that any member of } H \cup (J \cap K) \text{ is a member of } (H \cup K) \setminus M, \nonumber \\
+                &\quad \hspace{0.5cm} \text{therefore } H \cup (J \cap K) \subseteq (H \cup K) \setminus M \nonumber
+            \end{align}
+        \end{proof}
+    \end{itemize}
+    \item Question Three
+    \begin{itemize}
+        \item 3c \\
+        $T = \{x+y \sqrt{2} \mid x \in \mathbb{Q} \land y \in \mathbb{Q} \}$ \\
+        $S = \{st \mid s \in T \land t \in T \}$ \\
+        Claim: S = T
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose } s \in T \text{ and } t \in T \\
+                &\quad \hspace{1cm} \text{Since } s \in T \text{, we know } s = x_1 + y_1 \sqrt{2} \text{, where } x_1,y_1 \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } t \in T \text{, we know } t = x_2 + y_2 \sqrt{2} \text{, where } x_2,y_2 \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } st = (x_1 + y_1 \sqrt{2})(x_2 + y_2 \sqrt{2}) \text{, we know } st = x_1x_2 + x_1y_2 \sqrt{2} + x_2y_1 \sqrt{2} + 2y_1y_2 \\
+                &\quad \hspace{1cm} \text{Since } st \text{, we know } st = (x_1x_2 + 2y_1y_2) + \sqrt{2}(x_1y_2 + x_2y_1) \\
+                &\quad \hspace{1cm} \text{Let } a = x_1x_2 + 2y_1y_2 \text{ and } b = x_1y_2 + x_2y_1 \\
+                &\quad \hspace{1cm} \text{Since } x_1,x_2,y_1,y_2 \in \mathbb{Q} \text{, we know } a,b \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } st = a+b \sqrt{2} \text{ and } a,b \in \mathbb{Q} \text{, we know } S \subseteq T \\
+                &\quad \text{Choose } t \in T \text{ where } t = x + y \sqrt{2} \text{, and } x,y \in \mathbb{Q} \\
+                &\quad \hspace{1cm} \text{Since } 0,1 \in \mathbb{Q} \text{, } 0 \sqrt{2} = 0 \text{ and } 1+0 = 1 \text{, we know } 1 \in T \\
+                &\quad \hspace{1cm} \text{Since } t, 1 \in T \text{ and } t = 1 \cdot t \text{, we know } t \in S \\
+                &\quad \hspace{1cm} \text{Since } t \in S \text{, we know } T \subseteq S \\
+                &\quad \text{Since } S \subseteq T \text{ and } T \subseteq S \text{, we know } S = T
+            \end{align}
+        \end{proof}
+        \item 3d \\
+        Claim: The sum of an irrational number and a rational number is irrational.
+        \begin{proof}
+            \begin{align}
+                &\quad \text{Choose an irrational number } x \text{ and a rational number } y \\
+                &\quad \hspace{1cm} \text{Since } y \text{ is rational, we know } y = \frac{p_1}{q_1} \text{, where } p_1,q_1 \in \mathbb{Z} \text{ and } q_1 \neq 0 \\
+                &\quad \hspace{1cm} \text{Let } z = x + y \\
+                &\quad \hspace{1cm} \text{Assume towards a contradiction that } z \text{ is rational} \\
+                &\quad \hspace{2cm} \text{Since } z \text{ is rational, we know } z = \frac{p_2}{q_2} \text{, where } p_2,q_2 \in \mathbb{Z} \text{ and } q_2 \neq 0 \\
+                &\quad \hspace{2cm} \text{We can rewrite } x + y = z \text{ as } x + \frac{p_1}{q_1} = \frac{p_2}{q_2} \\
+                &\quad \hspace{2cm} \text{Since } x + \frac{p_1}{q_1} = \frac{p_2}{q_2} \text{, we know } x = \frac{p_2}{q_2} - \frac{p_1}{q_1} \\
+                &\quad \hspace{2cm} \text{Since } x = \frac{p_2}{q_2} - \frac{p_1}{q_1} \text{, we know } x = \frac{p_2q_1 - p_1q_2}{q_1q_2} \\
+                &\quad \hspace{2cm} \text{Since } q_1 \neq 0 \text{ and } q_2 \neq 0 \text{, we know } q_1q_2 \neq 0 \\
+                &\quad \hspace{2cm} \text{Since } x = \frac{p_1q_2 - p_2q_1}{q_1q_2} \text{, we know } x = \frac{p}{q} \text{ where } p,q \in \mathbb{Z} \text{ and } q \neq 0, \\
+                &\quad \hspace{2cm} \text{meaning $x$ is rational } \nonumber \\
+                &\quad \hspace{1cm} \text{This is a contradiction to our earlier claim, so } z \text{ must be irrational,} \\
+                &\quad \hspace{1cm} \text{meaning the sum of a irrational number and a rational number is irrational} \nonumber
+            \end{align}
+        \end{proof}
+    \end{itemize}
+\end{itemize}
 
 \end{document}
