@@ -68,11 +68,31 @@
     \end{enumerate}
     \item Question Four
     \begin{enumerate}
-        \item Part (a)
-        \item Part (b)
+        \item $k$ is not one-to-one, because $0, 6 \in \mathbb{R}$ and $k(0) = k(6)$, but $0 \neq 6$
+        \item Claim: $k_2$ is one-to-one
         \begin{proof}
             \begin{align}
-                &
+                &\text{Choose } x_1,x_2 \in (3, \infty) \text{ and Assume } k_2(x_1) = k_2(x_2) \\
+                &\hspace{1cm} \text{Since } k_2(x_1) = k_2(x_2), \text{ we know } (x_1 - 3)^2 = (x_2 - 3)^2 \\
+                &\hspace{1cm} \text{Suppose towards a contradiction } x_1 \neq x_2 \\
+                &\hspace{2cm} \text{Since } (x_1 - 3)^2 = (x_2 - 3)^2 \text{, we know } \pm (x_1 - 3) = \pm (x_2 - 3) \\
+                &\hspace{2cm} \text{Case 1: } (x_1 - 3) = (x_2 - 3) \\
+                &\hspace{3cm} \text{Since } (x_1 - 3) = (x_2 - 3) \text{, we know } x_1 = x_2 \\
+                &\hspace{2cm} \text{Case 2: } (x_1 - 3) = - (x_2 - 3) \\
+                &\hspace{3cm} \text{Since } (x_1 - 3) = - (x_2 - 3) \text{, we know } x_1 - 3 = - x_2 + 3 \\
+                &\hspace{3cm} \text{Since } x_1 - 3 = - x_2 + 3 \text{, we know } x_1 - 6 = - x_2 \\
+                &\hspace{3cm} \text{Since } x_1 - 6 = - x_2 \text{ and $x_2 > 3$, we know } x_1 \leq 0 \\
+                &\hspace{2cm} \text{Case 3: } - (x_1 - 3) = (x_2 - 3) \\
+                &\hspace{3cm} \text{Since } - (x_1 - 3) = (x_2 - 3) \text{, we know } - x_1 + 3 = x_2 - 3 \\
+                &\hspace{3cm} \text{Since } - x_1 + 3 = x_2 - 3 \text{, we know } - x_1 = x_2 - 6 \\
+                &\hspace{3cm} \text{Since } - x_1 = x_2 - 6 \text{ and $x_1 > 3$, we know } x_2 \leq 0 \\
+                &\hspace{2cm} \text{Case 4: } - (x_1 - 3) = - (x_2 - 3) \\
+                &\hspace{3cm} \text{Since } - (x_1 - 3) = - (x_2 - 3) \text{, we know } - x_1 + 3 = - x_2 + 3 \\
+                &\hspace{3cm} \text{Since } - x_1 + 3 = - x_2 + 3 \text{, we know } - x_1 = - x_2 \\
+                &\hspace{3cm} \text{Since } - x_1 = - x_2 \text{, we know } x_1 = x_2 \\
+                &\hspace{2cm} \text{In any case of } (x_1 - 3)^2 = (x_2 - 3)^2 \text{, we proved an impossibility of } x_1 \neq x_2, \\
+                &\hspace{1cm} \text{Under the assumption of } x_1 \neq x_2 \text{, we proved an impossibility, so } x_1 = x_2 \\
+                &\text{Under the assumption of } k_2(x_1) = k_2(x_2) \text{, we proved } x_1 = x_2 \text{, so $k_2$ is one-to-one}
             \end{align}
         \end{proof}
     \end{enumerate}
