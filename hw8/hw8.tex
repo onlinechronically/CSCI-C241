@@ -103,11 +103,15 @@
     \end{enumerate}
     \item Question Six
     \begin{enumerate}
-        \item Part (a)
-        \item Part (b)
+        \item $a$ is not one-to-one, because $\texttt{"76"},\texttt{"67"} \in \texttt{Str}$ and $a(\texttt{"76"}) = a(\texttt{"67"})$, but $\texttt{"76"} \neq \texttt{"67"}$
+        \item Claim: $a$ is onto
         \begin{proof}
             \begin{align}
-                &
+                &\text{Choose } n \in \mathbb{N} \\
+                &\hspace{1cm} \text{Let } s \text{ be an empty string} \\
+                &\hspace{1cm} \text{As long as $n > 9$, concatenate $\texttt{"9"}$ to the end of $s$ and decrease $n$ by 9}  \\
+                &\hspace{1cm} n \text{ is concatenated to the end of } s \\
+                &\text{For every } x \in \mathbb{N} \text{, there is some string containing digits that add up to } x
             \end{align}
         \end{proof}
     \end{enumerate}
