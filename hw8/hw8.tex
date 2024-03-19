@@ -56,15 +56,15 @@
         \item $f(x) = x+5$
         \item $f(s) = s \text{ is concatenated to itself}$
         \item $f(s) = \begin{cases}
-                \verb|""| &\text{ if } s = \verb|""| \\
+                \texttt{""} &\text{ if } s = \texttt{""} \\
                 s \text{ with the last character removed } &\text{ otherwise}
             \end{cases}$
         \item $f(s) = |s|$
-        \item $|\verb|Str|| \geq |\mathbb{N}|$
+        \item $|\texttt{Str}| \geq |\mathbb{N}|$
         \item $f(s) = \text{the sum of the ascii values of each character of } s \text{ multiplied by the total amount of all ascii values,}$ \\
         raised to the position (starting at zero) of said character in $s$ \\
         Note: This is base-256 to base-10, similar to how we convert base-16 to base-10
-        \item $|\verb|Str|| = |\mathbb{N}|$
+        \item $|\texttt{Str}| = |\mathbb{N}|$
     \end{enumerate}
     \item Question Four
     \begin{enumerate}
@@ -98,8 +98,8 @@
     \end{enumerate}
     \item Question Five
     \begin{enumerate}
-        \item $h$ is not one-to-one, because $\verb|"X-Y-Z"|, \verb|"X--Y--Z"| \in \verb|Str|$ and $h(\verb|"X-Y-Z"|) = h(\verb|"X--Y--Z"|)$, but $\verb|"X-Y-Z"| \neq \verb|"X--Y--Z"|$
-        \item $h$ is not onto, because $\verb|"-"| \in \verb|Str|$ but there does not exist a $s \in \verb|Str|$ where $h(s) = \verb|"-"|$
+        \item $h$ is not one-to-one, because $\texttt{"X-Y-Z"}, \texttt{"X--Y--Z"} \in \texttt{Str}$ and $h(\texttt{"X-Y-Z"}) = h(\texttt{"X--Y--Z"})$, but $\texttt{"X-Y-Z"} \neq \texttt{"X--Y--Z"}$
+        \item $h$ is not onto, because $\texttt{"-"} \in \texttt{Str}$ but there does not exist a $s \in \texttt{Str}$ where $h(s) = \texttt{"-"}$
     \end{enumerate}
     \item Question Six
     \begin{enumerate}
