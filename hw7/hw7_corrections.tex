@@ -1,0 +1,68 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}} 
+
+\title{HW7 (Corrections) (CSCI-C241)}
+\author{Lillie Donato}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item Question 2
+    \begin{itemize}
+        \item An empty relation
+        \item $B \times C$ (The Cartesian Product)
+    \end{itemize}
+    \item Question 5
+    \begin{itemize}
+        \item Part (d) \\
+        Claim: $M$ is anti-symmetric
+        \begin{proof}
+            \begin{align}
+                &\text{Choose } x,y \in \mathbb{N} \text{ and Assume } M(x,y) \text{ and } M(y,x) \\
+                &\hspace{1cm} \text{Since } M(x,y) \text{ and } M(y,x) \text{, we know } x \text{ is a multiple of } y \text{ and } y \text{ is a multiple of } x \\
+                &\hspace{1cm} \text{Since } x \text{ is a multiple of } y \text{, there exists some } k \in \mathbb{N} \text{ such that } x = ky \\
+                &\hspace{1cm} \text{Since } y \text{ is a multiple of } x \text{, there exists some } j \in \mathbb{N} \text{ such that } y = jx \\
+                &\hspace{1cm} \text{Since } x = ky \text{ and } y = jx \text{, we know } y = jky \\
+                &\hspace{1cm} \text{Since } y=jky \text{, we know } jk=1 \text{ or } y=0 \\
+                &\hspace{1cm} \text{Case 1: } jk=1 \\
+                &\hspace{2cm} \text{Since } jk = 1 \text{ and } j,k \in \mathbb{N} \text{, we know } j = 1 \text{ and } k = 1 \\
+                &\hspace{2cm} \text{Since } j = 1 \text{ and } k = 1 \text{, we know } x = 1y \\
+                &\hspace{2cm} \text{Since } x = 1y \text{, we know } x = y \\
+                &\hspace{1cm} \text{Case 2: } y=0 \\
+                &\hspace{2cm} \text{Since } y=0 \text{ and } x=ky \text{, we know } x=0k \\
+                &\hspace{2cm} \text{Since } x=0k \text{, we know } x=0 \\
+                &\hspace{2cm} \text{Since } y=0 \text{ and } x=0 \text{, we know} x=y \\
+                &\hspace{1cm} \text{In either case, we proved } x=y \text{, so we know } x=y \text{ in general} \\
+                &\text{Under the assumption of $M(x,y)$ and $M(y,x)$, we proved $x=y$, so $M$ is anti-symmetric}
+            \end{align}
+        \end{proof}
+    \end{itemize}
+    \item Question 7
+    \begin{itemize}
+        \item Part (c) \\
+        Claim: $I$ has property $F$
+        \begin{proof}
+            \begin{align}
+                &\text{Choose } x,y,z \in \mathbb{R} \text{ and Assume } I(x,y) \text{ and } I(x,z) \\
+                &\hspace{1cm} \text{Since } I(x,y) \text{ and } I(x,z) \text{, we know } x \cdot y=1 \text{ and } x \cdot z = 1 \\
+                &\hspace{1cm} \text{Since } x \cdot y=1 \text{ and } x \cdot z = 1 \text{, we know } x \cdot y=x \cdot z \\
+                &\hspace{1cm} \text{Since } x \cdot y=x \cdot z \text{, we know } y=z \\
+                &\text{Under the assumption of } I(x,y) \text{ and } I(x,z) \text{, we proved } y = z \text{, therefore } I \text{ has property } F
+            \end{align}
+        \end{proof}
+    \end{itemize}
+\end{itemize}
+
+\end{document}
