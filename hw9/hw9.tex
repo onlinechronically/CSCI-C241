@@ -58,7 +58,22 @@
             \draw[->, >=stealth] (4) -- (3);
             \draw[->, >=stealth] (3) -- (1);
         \end{tikzpicture}
-        \item This is not possible as, $\exists y \forall x P(x, y)$ states that there exists a shape $x$ such that every shape points to, but on the other hand $\forall x \exists y P(x,y)$ which must be false, states that for every shape, there exists a shape $y$ such that the first shape points to, meaning not every shape can point to another. With that being said, if not every shape can point to another, then a shape that has every shape pointing to itself can't exist.
+        \item \begin{tikzpicture}[scale=1.5, node distance={15mm}, main/.style = {circle}]
+            % Nodes
+            \node[main] (1) {$\square$};
+            \node[main] (2) [below of=1] {$\triangle$};
+            \node[main] (3) [right of=1] {$\bigcirc$};
+            \node[main] (4) [below of=3] {$\bigstar$};
+
+            % Loops
+            \draw[->,>=stealth] (4) edge[out=270, in=300, looseness=5] (4);
+            
+            % Lines
+            \draw[->, >=stealth] (1) -- (4);
+            \draw[->, >=stealth] (2) -- (4);
+            \draw[->, >=stealth] (3) -- (4);
+        \end{tikzpicture}
+        % \item This is not possible as, $\exists y \forall x P(x, y)$ states that there exists a shape $x$ such that every shape points to, but on the other hand $\forall x \exists y P(x,y)$ which must be false, states that for every shape, there exists a shape $y$ such that the first shape points to, meaning not every shape can point to another. With that being said, if not every shape can point to another, then a shape that has every shape pointing to itself can't exist.
         \item $\mathcal{M}_1, \mathcal{M}_2, \mathcal{M}_3$
         \item $\mathcal{M}_2$
         \item $\mathcal{M}_{10}$
