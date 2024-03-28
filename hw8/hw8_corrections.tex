@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}}
+
+\title{HW8 Corrections (CSCI-C241)}
+\author{Lillie Donato}
+\date{27 March 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item Question One
+    \begin{itemize}
+        \item $R_3$ is a partial function, because each member of $B$ is at most related to a single member of $B$, but $d \in B$, but there exists no member of $B$ that $d$ is related to
+    \end{itemize}
+    \item Question Three
+    \begin{itemize}
+        \item This is not possible, because in order for a function from $B \rightarrow A$ to be one-to-one, no member of $B$ would be related to the same member of $A$, but in order to be a total function, every member of $B$ must be related to a member of $A$. This would not be possible because the set $B$ has one more member than the set $A$
+        \item $f(x) = |2x|$
+    \end{itemize}
+    \item Question 6
+    \begin{itemize}
+        \item Claim: $a$ is onto
+        \begin{proof}
+            \begin{align}
+                &\text{Choose } n \in \mathbb{N} \\
+                &\hspace{1cm} \text{Let } s \in \texttt{Str} \text{ where } s = \texttt{a string made up of $n$ $1$'s} \\
+                &\hspace{1cm} \text{Since $s$ contains $n$ digits of $1$ and $s \in \texttt{Str}$, we know all the digits add up to $n$}  \\
+                &\hspace{1cm} \text{Since the digits of $s$ add up to $n$, we know $a(s)=n$, so $a$ is onto}
+            \end{align}
+        \end{proof}
+    \end{itemize}
+\end{itemize}
+
+\end{document}
