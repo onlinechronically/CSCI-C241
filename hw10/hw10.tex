@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}}
+
+\title{HW10 (CSCI-C241)}
+\author{Lillie Donato}
+\date{DD April 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Question One
+    \begin{enumerate}
+        \item $1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36$
+        \item $\frac{1}{3} + \frac{1}{4} = \frac{7}{12}$
+        \item $\sqrt{2}$
+        \item $\frac{1}{1} = 1$
+        \item $\frac{1}{k+1}$
+        \item $\frac{1}{k}$
+        \item $\sum\limits_{i=1}^{k}{\frac{1}{i}} + \frac{1}{k+1}$
+    \end{enumerate}
+    \item Question Two
+    \begin{enumerate}
+        \item Claim: For $n \in \mathbb{N}$, $n \geq 1$, $\sum\limits_{i=1}^{n}{2^{i-1} = 2^n - 1}$
+        \begin{proof}
+            (induction on $n$) \\
+            (Base Step, $n=1$):
+            \begin{eqnarray}
+                \sum\limits_{i=1}^{n}{2^{1-1}} &=& \sum\limits_{i=1}^{n}{2^0} \\
+                &=& \sum\limits_{i=1}^{n}{1} \\
+                &=& 1 \\
+                &=& 2^0 \\
+                &=& 2^{1-1}
+            \end{eqnarray}
+            (Inductive Step): \\
+            Assume $\sum\limits_{i=1}^{k}{2^{i-1}} = 2^k - 1$ for some $k \geq 1$
+            \begin{eqnarray}
+                \sum\limits_{i=1}^{k+1}{2^{i-1}} &=& \sum\limits_{i=1}^{k}{2^{i-1}} + 2^{k+1-1} \\
+                &=& \sum\limits_{i=1}^{k}{2^{i-1}} + 2^k \\
+                &=& 2^k - 1 + 2^k \hspace{1cm} \text{(by the induction hypothesis, and $2^k = 2^k$)} \\
+                &=& 2^k + 2^k - 1 \\
+                &=& 2 \cdot 2^k - 1 \\
+                &=& 2^{k+1} - 1
+            \end{eqnarray}
+        \end{proof}
+        \item Claim: For all $n \in \mathbb{N}$, $\sum\limits_{i=0}^{n}{i! \cdot i} = (n+1)! - 1$
+        \begin{proof}
+            (induction on $n$) \\
+            (Base Step, $n=0$):
+            \begin{eqnarray}
+                \sum\limits_{i=0}^{n}{0! \cdot 0} &=& \sum\limits_{i=0}^{n}{0} \\
+                &=& 0 \\
+                &=& 1 - 1 \\
+                &=& 1! - 1 \\
+                &=& (0+1)! - 1
+            \end{eqnarray}
+            (Inductive Step): \\
+            Assume $\sum\limits_{i=0}^{k}{i! \cdot i} = (k+1)! - 1$ for some $k \in \mathbb{N}$
+            \begin{eqnarray}
+                \sum\limits_{i=0}^{k+1}{i! \cdot i} &=& (\sum\limits_{i=0}^{k}{i! \cdot i}) + ((k+1)! \cdot (k+1)) \\
+                &=& (k+1)! - 1 + (k+1)! \cdot (k+1) \hspace{1cm} \text{(By the induction hypothesis)} \\
+                &=& (k+1)! + (k+1)! \cdot (k+1) - 1 \\
+                &=& (k+1)! \cdot (1 + (k+1)) - 1 \\
+                &=& (k+1)! \cdot (k+2) - 1 \\
+                &=& (k+2)! - 1 \\
+                &=& (k+1+1)! - 1
+            \end{eqnarray}
+        \end{proof}
+        \item Claim: For $n \in \mathbb{N}$, $n \geq \text{the sum of the number of digits in } n$
+        \begin{proof}
+            (induction on the number of digits of $n$) \\
+            (Base Step, $n$ has one digit):
+            \begin{eqnarray}
+                &&\text{Since } n \text{ has one digit } n < 10 \\
+                &&\text{Since } n<10 \text{ and the number of digits of } n=1, \text{ the sum of the digits is } n
+            \end{eqnarray}
+            (Inductive Step):
+        \end{proof}
+    \end{enumerate}
+    \item Question Three
+    \begin{enumerate}
+        \item The minimum value where $f(x) = g(x)$ is $10^{12}$
+        \item A value where $f(x) > g(x)$ is $19$
+    \end{enumerate}
+    \item Claim: For every positive real number $a$ where $a \geq e$, there exists $m \in \mathbb{N}$ such that for all $n \geq m$, $n! > a^n$
+    \begin{proof}
+        \begin{align}
+            &\text{Choose } a \in \mathbb{R} \text{ such that } a \geq 0 \text{ and } a \geq e \\
+            &\text{There exists some } m \in \mathbb{N} \text{ where } m > 2a^2 \\
+            &\text{Choose } n \in \mathbb{N} \text{ where } n \geq m \\
+            &\hspace{1cm} \text{Since half of the numbers that are being multiplied in } n! \text{ are greater than } \frac{n}{2} \text{,} \\
+            &\hspace{1cm} \text{we know } \frac{n}{2} \text{ numbers of } n! \text{ are greater than } \frac{n}{2} \nonumber \\
+            &\hspace{1cm} \text{Since } \frac{n}{2} \text{ numbers are greater than } \frac{n}{2} \text{, we know } n! > \left (\frac{n}{2}\right )^{\frac{n}{2}} \\
+            &\hspace{1cm} \text{Since } n! > \frac{n}{2} \text{, we know } n! > \left (\frac{n}{2} \right )^{\frac{n}{2}} \\
+            &\hspace{1cm} \text{Since } n \geq m \text{, we know } \left (\frac{n}{2}\right )^{\frac{n}{2}} \geq \left (\frac{m}{2}\right )^{\frac{n}{2}} \\
+            &\hspace{1cm} \text{Since } \left (\frac{n}{2}\right )^{\frac{n}{2}} \geq \left (\frac{m}{2}\right )^{\frac{n}{2}} \text{, we know } n! > \left (\frac{m}{2}\right )^{\frac{n}{2}} \\
+            &\hspace{1cm} \text{Since } \left (\frac{m}{2}\right )^{\frac{n}{2}} = \left (\sqrt{\frac{m}{2}}\right )^{n} \text{, we know } n! > \left (\sqrt{\frac{m}{2}}\right )^{n} \\
+            &\hspace{1cm} \text{Since } m > 2a^2 \text{, we know } \frac{m}{2} > a^2 \\
+            &\hspace{1cm} \text{Since } \frac{m}{2} > a^2 \text{, we know } \sqrt{\frac{m}{2}} > a \\
+            &\hspace{1cm} \text{Since } \sqrt{\frac{m}{2}} > a \text{, we know } \left (\sqrt{\frac{m}{2}}\right )^n > a^n \\
+            &\hspace{1cm} \text{Since } \left (\sqrt{\frac{m}{2}}\right )^n > a^n \text{, we know } n! > a^n
+        \end{align}
+    \end{proof}
+    \item Question Five - Combinatorics
+    \begin{enumerate}
+        \item $10! = 3628800$
+        \item $\frac{50!}{(50-5)!} = 254251200$
+        \item $50^5 = 312500000$
+        \item $\frac{20!}{16!} = 116280$
+        \item $\frac{\frac{20!}{15!}}{5!} = 15504$
+    \end{enumerate}
+    \item Question Six
+    \begin{enumerate}
+        \item $52! = 8.0658 \times 10^{67}$ ($68$ digits)
+        \item I personally do not think every permutation of a 52 deck card has been used. Despite how often cards are used in western culture and for how long they have been, I really do not believe it would be possible for $52!$ permutations to have been used because of the gigantic number it is.
+    \end{enumerate}
+    \item Claim: For any non-empty set $A$ of size $n$ and any integer $r$ with $n \geq r \geq 1$, there are $\frac{n!}{(n-r)!}$ permutations of length $r$ using values taken from $A$
+    \begin{proof}
+        (induction on $n$) \\
+        (Base Step, $r=1$):
+        \begin{eqnarray}
+            \frac{n!}{(n-1)!} &=& \frac{n \cdot (n-1)!}{(n-1)!} \\
+            &=& \frac{n}{1} \\
+            &=& n
+        \end{eqnarray}
+        (Inductive Step): \\
+        Assume there are $\frac{n!}{(n-k)!}$ permutations for some length $k \geq 1$ using values taken from $A$, a set of length $n$
+        \begin{eqnarray}
+            \frac{n!}{(n-(k+1))!} &=& \frac{n!}{(n-k-1)!} \\
+            &=& \frac{n!}{\frac{(n-k) \cdot (n-k-1)!}{(n-k)}} \\
+            &=& \frac{n!}{(n-k)!} \cdot (n-k) \\
+        \end{eqnarray}
+        Since there are $\frac{n!}{(n-k)!}$ permutations for some length $k$ (by the Induction Hypothesis), there are $n-k$ possibilities for every permutation for some length $k+1$, therefore there are $\frac{n!}{(n-k)!} \cdot (n-k)$ permutations for length $k+1$
+    \end{proof}
+\end{enumerate}
+
+\end{document}
