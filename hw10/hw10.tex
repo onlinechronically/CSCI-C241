@@ -96,9 +96,8 @@
     \item Claim: For every positive real number $a$ where $a \geq e$, there exists $m \in \mathbb{N}$ such that for all $n \geq m$, $n! > a^n$
     \begin{proof}
         \begin{align}
-            &\text{Choose } a \in \mathbb{R} \text{ such that } a \geq 0 \text{ and } a \geq e \\
-            &\text{There exists some } m \in \mathbb{N} \text{ where } m > 2a^2 \\
-            &\text{Choose } n \in \mathbb{N} \text{ where } n \geq m \\
+            &\text{Choose } a \in \mathbb{R} \text{ such that }  a \geq e \\
+            &\text{Suppose } m \in \mathbb{N} \text{ such that } n \geq m \\
             &\hspace{1cm} \text{Since half of the numbers that are being multiplied in } n! \text{ are greater than } \frac{n}{2} \text{,} \\
             &\hspace{1cm} \text{we know } \frac{n}{2} \text{ numbers of } n! \text{ are greater than } \frac{n}{2} \nonumber \\
             &\hspace{1cm} \text{Since } \frac{n}{2} \text{ numbers are greater than } \frac{n}{2} \text{, we know } n! > \left (\frac{n}{2}\right )^{\frac{n}{2}} \\
@@ -106,6 +105,7 @@
             &\hspace{1cm} \text{Since } n \geq m \text{, we know } \left (\frac{n}{2}\right )^{\frac{n}{2}} \geq \left (\frac{m}{2}\right )^{\frac{n}{2}} \\
             &\hspace{1cm} \text{Since } \left (\frac{n}{2}\right )^{\frac{n}{2}} \geq \left (\frac{m}{2}\right )^{\frac{n}{2}} \text{, we know } n! > \left (\frac{m}{2}\right )^{\frac{n}{2}} \\
             &\hspace{1cm} \text{Since } \left (\frac{m}{2}\right )^{\frac{n}{2}} = \left (\sqrt{\frac{m}{2}}\right )^{n} \text{, we know } n! > \left (\sqrt{\frac{m}{2}}\right )^{n} \\
+            &\hspace{1cm} \text{Let } m > 2a^2 \\
             &\hspace{1cm} \text{Since } m > 2a^2 \text{, we know } \frac{m}{2} > a^2 \\
             &\hspace{1cm} \text{Since } \frac{m}{2} > a^2 \text{, we know } \sqrt{\frac{m}{2}} > a \\
             &\hspace{1cm} \text{Since } \sqrt{\frac{m}{2}} > a \text{, we know } \left (\sqrt{\frac{m}{2}}\right )^n > a^n \\
@@ -141,7 +141,7 @@
             &=& \frac{n!}{\frac{(n-k) \cdot (n-k-1)!}{(n-k)}} \\
             &=& \frac{n!}{(n-k)!} \cdot (n-k) \\
         \end{eqnarray}
-        Since there are $\frac{n!}{(n-k)!}$ permutations for some length $k$ (by the Induction Hypothesis), there are $n-k$ possibilities for every permutation for some length $k+1$, therefore there are $\frac{n!}{(n-k)!} \cdot (n-k)$ permutations for length $k+1$
+        Since there are $\frac{n!}{(n-k)!}$ permutations for some length $k$ (by the Induction Hypothesis), there are $n-k$ possibilities to create a new permutation of length $k+1$ from every permutation of length $k$, therefore there are $\frac{n!}{(n-k)!} \cdot (n-k)$ permutations for length $k+1$
     \end{proof}
 \end{enumerate}
 
