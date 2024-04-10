@@ -77,15 +77,23 @@
                 &=& (k+1+1)! - 1
             \end{eqnarray}
         \end{proof}
-        \item Claim: For $n \in \mathbb{N}$, $n \geq \text{the sum of the number of digits in } n$
+        \item Claim: For $x \in \mathbb{N}$, $n \in \mathbb{N}$ such that $n = \text{the number of digits in } x$, $x \geq$ the sum of the digits of $x$
         \begin{proof}
-            (induction on the number of digits of $n$) \\
-            (Base Step, $n$ has one digit):
+            (induction on $n$, the number of digits of $x$) \\
+            (Base Step, $n=1$, $x$ has one digit):
             \begin{eqnarray}
-                &&\text{Since } n \text{ has one digit } n < 10 \\
-                &&\text{Since } n<10 \text{ and the number of digits of } n=1, \text{ the sum of the digits is } n
+                &&\text{Since } x \text{ has one digit } x < 10 \\
+                &&\text{Since } x<10 \text{ and the number of digits of } x \text{ is } 1, \text{ the sum of the digits is } x \\
+                &&\text{Since the sum of the digits of } x \text{ is } x \text{, we know } x \geq \text{the sum of the number of digits}
             \end{eqnarray}
-            (Inductive Step):
+            (Inductive Step): \\
+            Assume for some $x_1 \in \mathbb{N}$, $k =$ the number of digits in $x_1, x_1 \geq$ the sum of the digits of $x_1$
+            \begin{eqnarray}
+                \text{Let } c &=& \text{some natural number} < 10 \\
+                \text{Let } x_2 &=& x_1 + c \cdot 10^k \hspace{1cm} (x_2 = x_1 \text{ with $c$ added to the beginning, $k+1$ digits}) \\
+                \text{So, sum($x_2$)} &=& \text{sum($x_1$)} + c \\
+                \text{Therefore, } x_2 &\geq& \text{sum($x_2$)} \hspace{1cm} (\text{by the Induction Hypothesis and $c \cdot 10^k \geq c$})
+            \end{eqnarray}
         \end{proof}
     \end{enumerate}
     \item Question Three
