@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}}
+
+\title{HW10 Corrections (CSCI-C241)}
+\author{Lillie Donato}
+\date{17 April 2024}
+
+\begin{document}
+
+\maketitle
+
+\begin{itemize}
+    \item Question Four
+    \begin{itemize}
+        \item Claim: For every positive real number $a$ where $a \geq e$, there exists $m \in \mathbb{N}$ such that for all $n \geq m$, $n! > a^n$
+        \begin{proof}
+            \begin{align}
+                &\text{Choose } a \in \mathbb{R} \text{ such that }  a \geq e \\
+                &\text{Suppose } m \in \mathbb{N} \text{ such that } n \geq m \\
+                &\hspace{1cm} \text{Since half of the numbers that are being multiplied in } n! \text{ are greater than } \frac{n}{2} \text{,} \\
+                &\hspace{1cm} \text{we know } \frac{n}{2} \text{ numbers of } n! \text{ are greater than } \frac{n}{2} \nonumber \\
+                &\hspace{1cm} \text{Since } \frac{n}{2} \text{ numbers are greater than } \frac{n}{2} \text{, we know } n! > \left (\frac{n}{2}\right )^{\frac{n}{2}} \\
+                &\hspace{1cm} \text{Since } n! > \frac{n}{2} \text{, we know } n! > \left (\frac{n}{2} \right )^{\frac{n}{2}} \\
+                &\hspace{1cm} \text{Since } n \geq m \text{, we know } \left (\frac{n}{2}\right )^{\frac{n}{2}} \geq \left (\frac{m}{2}\right )^{\frac{n}{2}} \\
+                &\hspace{1cm} \text{Since } \left (\frac{n}{2}\right )^{\frac{n}{2}} \geq \left (\frac{m}{2}\right )^{\frac{n}{2}} \text{, we know } n! > \left (\frac{m}{2}\right )^{\frac{n}{2}} \\
+                &\hspace{1cm} \text{Since } \left (\frac{m}{2}\right )^{\frac{n}{2}} = \left (\sqrt{\frac{m}{2}}\right )^{n} \text{, we know } n! > \left (\sqrt{\frac{m}{2}}\right )^{n} \\
+                &\hspace{1cm} \text{Let } m = 2a^2 \\
+                &\hspace{1cm} \text{Since } m = 2a^2 \text{, we know } \frac{m}{2} = a^2 \\
+                &\hspace{1cm} \text{Since } \frac{m}{2} = a^2 \text{, we know } \sqrt{\frac{m}{2}} = a \\
+                &\hspace{1cm} \text{Since } \sqrt{\frac{m}{2}} = a \text{, we know } \left (\sqrt{\frac{m}{2}}\right )^n = a^n \\
+                &\hspace{1cm} \text{Since } n! > \left (\sqrt{\frac{m}{2}}\right )^n \text{ and } \left (\sqrt{\frac{m}{2}}\right )^n = a^n \text{, we know } n! > a^n
+            \end{align}
+        \end{proof}
+    \end{itemize}
+    \item Question Seven
+    \begin{itemize}
+        \item Claim: For any non-empty set $A$ of size $n$ and any integer $r$ with $n \geq r \geq 1$, there are $\frac{n!}{(n-r)!}$ permutations of length $r$ using values taken from $A$
+        \begin{proof}
+            (induction on $n$) \\
+            (Base Step, $r=1$):
+            \begin{eqnarray}
+                \frac{n!}{(n-1)!} &=& \frac{n \cdot (n-1)!}{(n-1)!} \\
+                &=& \frac{n}{1} \\
+                &=& n
+            \end{eqnarray}
+            For a permutation of length $1$ for some set of length $n$, since said permutation would have a single item, this item could be any item of the set of length $n$. \\
+            (Inductive Step): \\
+            Assume there are $\frac{n!}{(n-k)!}$ permutations for some length $k \geq 1$ using values taken from $A$, a set of length $n$
+            \begin{eqnarray}
+                \frac{n!}{(n-k)!} \cdot (n-k) &=& \frac{n!}{\frac{(n-k) \cdot (n-k-1)!}{(n-k)}} \\
+                &=& \frac{n!}{(n-k-1)!} \\
+                &=& \frac{n!}{(n-(k+1))!}
+            \end{eqnarray}
+            Since there are $\frac{n!}{(n-k)!}$ permutations for some length $k$ (by the Induction Hypothesis), there are $n-k$ possibilities to create a new permutation of length $k+1$ from every permutation of length $k$, therefore there are $\frac{n!}{(n-k)!} \cdot (n-k)$ permutations for length $k+1$
+        \end{proof}
+    \end{itemize}
+\end{itemize}
+
+\end{document}
