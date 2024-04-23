@@ -81,7 +81,6 @@
         (Base Step, $n = 1$):
         \begin{eqnarray}
             L_1 &=& 1 \hspace{1cm} \text{(By the definition of the Lucas Numbers)} \\
-            &=& 1 \\
             &=& 1 + 0 \\
             &=& F_1 + F_0 \\
             &=& F_{2 - 1} + F_{2-2} \\
@@ -112,16 +111,16 @@
         \begin{align}
             &\text{Case 1: } k \text{ is odd} \\
             &\hspace{1cm} \text{By our IH, } \frac{k+1}{2} \text{ can be written as a unique sum of powers of $2$,} \\
-            &\hspace{1.5cm} \text{so } \frac{k+1}{2} = c_0 \cdot 2^0 + c_1 \cdot 2^1 + c_2 \cdot 2^2 + c_3 \cdot 2^3 + \dots + c_n \cdot 2^n \text{,} \\
-            &\hspace{1.5cm} \text{where all of the values multiplying the powers of $2$ are $0$ or $1$} \\
+            &\hspace{1.5cm} \text{so } \frac{k+1}{2} = c_0 \cdot 2^0 + c_1 \cdot 2^1 + c_2 \cdot 2^2 + c_3 \cdot 2^3 + \dots + c_n \cdot 2^n \text{,} \nonumber \\
+            &\hspace{1.5cm} \text{where all of the values multiplying the powers of $2$ are $0$ or $1$} \nonumber \\
             &\hspace{1cm} \text{Therefore, } \\
-            &\hspace{1.5cm} k+1 = 2 \cdot \frac{k+1}{2} = c_0 \cdot 2^{0+1} + c_1 \cdot 2^{1+1} + c_2 \cdot 2^{2+1} + c_3 \cdot 2^{3+1} + \dots + c_n \cdot 2^{n+1} \\
+            &\hspace{1.5cm} k+1 = 2 \cdot \frac{k+1}{2} = c_0 \cdot 2^{0+1} + c_1 \cdot 2^{1+1} + c_2 \cdot 2^{2+1} + c_3 \cdot 2^{3+1} + \dots + c_n \cdot 2^{n+1} \nonumber \\
             &\text{Case 2: } k \text{ is even} \\
             &\hspace{1cm} \text{Since } k \text{ is even and can be represented in sums of powers of $2$ (according to our IH),} \\
-            &\hspace{1.5cm} \text{then in the sum of powers of } 2 \text{ for } k \text{, } 2^0 \text{ is not a member} \\
+            &\hspace{1.5cm} \text{then in the sum of powers of } 2 \text{ for } k \text{, } 2^0 \text{ is not a member} \nonumber \\
             &\hspace{1cm} \text{Therefore } k+1 = k + 2^0 \\
             &\text{In either case of } k+1 \text{, it can be made by a unique sum of powers of $2$, so in general it can be} \\
-            &\hspace{.5cm} \text{made by a sum of powers of $2$}
+            &\hspace{.5cm} \text{made by a sum of powers of $2$} \nonumber
         \end{align}
     \end{proof}
 \end{enumerate}
