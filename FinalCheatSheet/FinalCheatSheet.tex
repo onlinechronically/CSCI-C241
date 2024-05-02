@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+\geometry{a4paper, margin=0mm}
+\AtBeginEnvironment{align}{\setcounter{equation}{0}}
+\AtBeginEnvironment{eqnarray}{\setcounter{equation}{0}}
+
+\begin{document}
+\noindent
+\\\textbf{Propositional Logic} \\
+    \indent{English} \\
+		\indent{\hspace{\parindent} Premise Tags (if $x$, when $x$, while $x$, where $x$, in the case that $x$)} \\
+		\indent{\hspace{\parindent} Conclusion Tags (only if $x$, only when $x$, only in the case that $x$, $x$ is a necessary condition)} \\
+		\indent{\hspace{\parindent} Not implication (therefore, thus, hence, so)} \\
+		\indent{\hspace{\parindent} Causality is not either (because, since, due to)} \\
+		\indent{\hspace{\parindent} Other implication:} \\
+			\indent{\hspace{\parindent} \hspace{\parindent}	$P \rightarrow Q$} \\
+				\indent{\hspace{\parindent} \hspace{\parindent}	\hspace{\parindent} \verb|"|if $P$, then $Q$\verb|"|, \verb|"|$Q$ if $P$\verb|"|, \verb|"|$P$ only if $Q$\verb|"|, \verb|"|$P$ is a sufficient condition for $Q$\verb|"|, \verb|"|$Q$ is a necessary condition for $P$\verb|"|} \\
+			\indent{\hspace{\parindent} \hspace{\parindent}	$P \leftrightarrow Q$: \verb|"|$P$ is a necessary and sufficient condition for $Q$\verb|"|} \\
+			\indent{\hspace{\parindent} \hspace{\parindent} \verb|"|$P$ is a sufficient condition for $Q$\verb|"|: $P \rightarrow Q$} \\
+			\indent{\hspace{\parindent} \hspace{\parindent}	\verb|"|$P$ is a necessary condition for $Q$\verb|"|: $Q \rightarrow P$} \\
+	\indent{$\neg, \land, \lor, \oplus, \rightarrow$} \\
+	\indent{\textbf{Contradictions} (Always FALSE)} \\
+	\indent{\textbf{Tautology} (Always TRUE)} \\
+	\indent{\textbf{Contingency}: TRUE (at least once) and FALSE (at least once)} \\
+	\indent{\textbf{Existential Claims}: Prove by giving an example that has some property (Truth Assignment)} \\
+	\indent{}\textbf{Universal Claims}: Prove by showing everything (in some category) has some property (Truth Table) \\
+	\indent{}\textbf{Consistency}: A set of formulas is consistent if and only if, there is an assignment that satisfies all of the formulas in the set. \\
+		\indent{\hspace{\parindent}}Provable with a truth assignment, Disprovable with a truth table that shows there's no assignment that satisfies all formulas \\
+	\indent{}\textbf{Logical Equivalency ($\equiv$)}: \\
+		\indent{\hspace{\parindent}}The formulas are logically equivalent if and only if every assignment that satisfies one formula also satisfies the other, vice versa. \\
+		\indent{\hspace{\parindent}}Provable with Matching Truth Tables, Disprovable with a truth assignment \\
+	\indent{}\textbf{Validity} \\
+		\indent{\hspace{\parindent}}\textbf{Valid} if and only if every assignment that satisfies the premise also satisfies the conclusion \\
+		\indent{\hspace{\parindent}}\textbf{Invalid} if and only there exists an assignment that satisfies all the premises but not the conclusion \\
+\textbf{Equivalence Proofs Rules} \\
+	\indent{}\textbf{Commutative Laws}: $p \land q \equiv q \land p$, $p \lor q \equiv q \lor p$ \\
+	\indent{}\textbf{Distributive Laws}: $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$, $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ \\
+	\indent{}\textbf{De Morgan's Laws}: $\neg (p \land q) \equiv \neg p \lor \neg q$, $\neg (p \lor q) \equiv \neg p \land \neg q$ \\
+	\indent{}\textbf{Associative Laws}: $p \land (q \land r) \equiv (p \land q) \land r$, $p \lor (q \lor r) \equiv p \lor (q \lor r)$ \\
+	\indent{}\textbf{Material Implication}: $p \rightarrow q \equiv \neg p \lor q$ \\
+	\indent{}\textbf{Transitive Property}: If $x = y$ and $y = z$, then $x = z$, If $p \equiv q$ and $q \equiv r$, then $p \equiv r$, If $p \vdash q$ and $q \vdash r$, then $p \vdash r$ \\
+	\indent{}\textbf{Double Negation}: $\neg \neg p \equiv p$ \\
+	\indent{}\textbf{Idempotence Laws}: $p \land p \equiv p$, $p \lor p \equiv p$ \\
+	\indent{}\textbf{Absorption}: $p \lor (p \land q) \equiv p$, $p \land (p \lor q) \equiv p$ \\
+	\indent{}\textbf{Currying}: $A \rightarrow (B \rightarrow C) \equiv (A \land B) \rightarrow C$ \\
+	\indent{}\textbf{Contrapositive}: $p \rightarrow q \equiv \neg q \rightarrow \neg p$ \\
+	\indent{}\textbf{Bi-Conditional}: $p \leftrightarrow q \equiv \neg p \leftrightarrow \neg q$, $p \leftrightarrow q \equiv (p \rightarrow q) \land (q \rightarrow p)$ \\
+	\indent{}\textbf{Tautology ($\top$)}: $A \lor \neg A \equiv \top$, $\top \land p \equiv p$, $\top \lor p \equiv \top$ \\
+	\indent{}\textbf{Contradiction ($\bot$)}: $A \land \neg A \equiv \bot$, $\bot \land p \equiv \bot$, $\bot \lor p \equiv p$ \\
+\textbf{Informal Proofs}: \\
+	\indent{}\textbf{Proving an Existential Claim}: Give an example (and show that the example works) \\
+	\indent{}\textbf{Proving a Universal Claim}: \verb|"|Choose\verb|"| a generic example and prove that it works \\
+	\indent{\hspace{\parindent}}\verb|"|Choose a member\verb|"| of A (\verb|"|and try to prove it is a member of B\verb|"|, to prove $A \subseteq B$) \\
+	\indent{\textbf{Rules}}: \\
+		\indent{\hspace{\parindent}}\textbf{Universal - Introduction (\texttt{"}Direct Proof\texttt{"})} \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}To prove that every $\star$ has property $P$, we \verb|"|choose\verb|"| a generic $\star$ and then prove that this variable has property $P$ \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}To prove \verb|"|every $\star$ is\verb|"|, start by writing: \verb|"|Choose a $\star$ $x$\verb|"| \\
+		\indent{\hspace{\parindent}}\textbf{Universal - \texttt{"}Elimination\texttt{"} (Application)} \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}If you know that \verb|"|every $\star$ has property $P$\verb|"| and you know that \verb|"|$x$ is a $\star$\verb|"|, then you can conclude $x$ has property $P$ \\
+		\indent{\hspace{\parindent}}\textbf{Existential - Introduction} \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}To prove \verb|"|there is a $\star$ with property $P$\verb|"| \\
+				\indent{\hspace{\parindent}\hspace{\parindent}\hspace{\parindent}}Give an example of a $\star$ \\
+				\indent{\hspace{\parindent}\hspace{\parindent}\hspace{\parindent}}Prove that said example has property $P$ \\
+		\indent{\hspace{\parindent}}\textbf{Existential - Elimination} \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}If you already know \verb|"|there is a $\star$ with property $P$\verb|"| \\
+				\indent{\hspace{\parindent}\hspace{\parindent}\hspace{\parindent}}\verb|"|So there is a $\star$ with property $P$. Call it $x$\verb|"| \\
+				\indent{\hspace{\parindent}\hspace{\parindent}\hspace{\parindent}}\verb|"|Let $a$ be a $\star$ with property $P$ or Hence some $\star$ $M$ exists that has property $P$\verb|"| \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}Give a name to the $\star$ with property $P$ and use that name to prove something else \\
+		\indent{\hspace{\parindent}}\textbf{Modus Tollens}: $p \rightarrow q, \neg q \vdash \neg p$ \\
+		\indent{\hspace{\parindent}}\textbf{Universal - Negation}: To prove a universal claim is False, give a counter example \\
+		\indent{\hspace{\parindent}}\textbf{Existential - Negation}: To prove an existential claim is False, Proof by Contradiction \\
+\textbf{Numbers}: \\
+	\indent{}\textbf{Natural Numbers}: $\mathbb{N} = \{ 0, 1, 2, 3, 4, ... \}$ \\
+	\indent{}\textbf{Integers}: $\mathbb{Z} = \{ ..., -2, -1, 0, 1, 2 \} = \{ n \mid n \in \mathbb{N} \lor -n \in \mathbb{N} \}$ \\
+	\indent{}\textbf{Rational Numbers}: Numbers that can be written as a ratio of integers \\
+		\indent{\hspace{\parindent}}$\mathbb{Q} = \{ \frac{p}{q} \mid p \in \mathbb{Z} \land q \in \mathbb{Z} \land q \neq 0 \}$ \pagebreak \\
+		\\\indent{\hspace{\parindent}}A number $x$ is rational if and only if, there exist integers $p$ and $q$, such that $x = \frac{p}{q}$ and $q \neq 0$ \\
+	\indent{}\textbf{Real Numbers}: $\mathbb{R} =$ every \# on the number line/with a decimal expansion (finite, infinite, pattern, no pattern) \\
+	\indent{}\textbf{Complex Numbers}: ($\mathbb{C}$) \\
+\textbf{Sets}: \\
+	\indent{}\textbf{Set Operations} \\
+		\indent{\hspace{\parindent}}\textbf{Union} ($A \cup B$) ($\{x \mid x \in A \lor x \in B\}$) \\
+		\indent{\hspace{\parindent}}\textbf{Intersection} ($A \cap B$) ($\{x \mid x \in A \land x \in B\}$) \\
+		\indent{\hspace{\parindent}}\textbf{Complement} ($\overline A$) ($\{x \mid x \notin A\}$) \\
+		\indent{\hspace{\parindent}}\textbf{Relative Complement/Set Subtraction} ($A \setminus B = A - B = \{ x \mid x \in A \land x \notin B \}$) \\
+	\indent{}\textbf{Subsets}: A set $A$ is a subset of a set $B$ if and only if every member of $A$ is also a member of $B$ \\
+		\indent{\hspace{\parindent}}We write $A \subseteq B$ to mean \verb|"|A is a subset of B\verb|"| \\
+		\indent{\hspace{\parindent}}A is a proper (or strict) subset of B if and only if A is a subset of B and $A \neq B$ \\
+		\indent{\hspace{\parindent}}We write $A \subsetneq B$ to mean \verb|"|A is a proper subset of B\verb|"| \\
+	\indent{}\textbf{Powersets}: The powerset of $A$ is the set whose members are the subsets of $A$ \\
+		\indent{\hspace{\parindent}}We write $\mathcal{P} (A)$ to mean \verb|"|the powerset of A\verb|"| \\
+		\indent{\hspace{\parindent}}Thm: For a finite set A, $\mid \mathcal{P} (A) \mid = 2^{\mid A \mid}$ \\
+	\indent{}\textbf{Supersets}: If A is a subset of B, then B is a superset of A \\
+		\indent{\hspace{\parindent}}We write $B \supseteq A$ to mean \verb|"|B is a superset of A\verb|"| \\
+\textbf{Relations/Properties}: \\
+	\indent{}\textbf{Cartesian Product}: $A \times B = \{(a,b) \mid a \in A \land b \in B\}$ \\
+		\indent{\hspace{\parindent}}\textbf{Fact}: The set of all ordered pairs where the first component is a member of $A$ and the second component is a member of $B$ \\
+		\indent{\hspace{\parindent}}\textbf{Fact}: For any finite sets $A$ and $B$, $\mid A \times B \mid = |A| \cdot |B|$ \\
+	\indent{}\textbf{Relations}: A set of ordered pairs where the first component is a member of $A$ and the second component is a member of $B$ is called a relation from $A$ to $B$ \\
+		\indent{}The Cartesian Product $A \times B$ is the biggest possible relation from $A$ to $B$ \\
+		\indent{}Every relation from $A$ to $B$ is a subset of $A \times B$ \\
+	\indent{}\textbf{Notation} | $(2,b) \in R$, $R(2,b)$ (\verb|"|prefix\verb|"| notation), $2Rb$ (\verb|"|infix\verb|"| notation) \\
+	\indent{}\textbf{Properties of Relations} \\
+		\indent{\hspace{\parindent}}A relation $R$ on a set $A$ is reflexive if and only if \textbf{for every} $x \in A$, $R(x, x)$ | (everything is related to itself) \\
+		\indent{\hspace{\parindent}}A relation $R$ on a set $A$ is antireflexive if and only if \textbf{for every} $x \in A$, $\neg R(x,x)$ | (nothing is related to itself) \\
+		\indent{\hspace{\parindent}}A relation $R$ on a set $A$ is symmetric if and only if \textbf{for all} $x,y \in A$, if $R(x,y)$, then $R(y,x)$ \\
+		\indent{\hspace{\parindent}}A relation $R$ on a set $A$ is antisymmetric if and only if \textbf{for all} $x,y \in A$, if $R(x,y)$ and $R(y,x)$, then $x = y$ \\
+			\indent{\hspace{\parindent}\hspace{\parindent}}if $R(x,y)$ and $x \neq y$, then $\neg R(y,x)$ \\
+		\indent{\hspace{\parindent}}A relation $R$ on a set $A$ is transitive if and only if \textbf{for all} $x,y,z \in A$, if $R(x,y)$ and $R(y,z)$, then $R(x,z)$ \\
+\textbf{Functions} | $f(x) = |x|$ (Function Notation): \\
+	\indent{}\textbf{Uniqueness}: A relation $R$ from a set $A$ to a set $B$ is a function if and only if \textbf{for every} $x \in A$ and $y,z \in B$, \\
+		\indent{\hspace{\parindent}\hspace{\parindent}}if $R(x,y)$ and $R(x,z)$, then $y = z$ \\
+		\indent{\hspace{\parindent}}An input maps to an input, or doesn't (nothing more than one) \& An input will not map to more than one output \\
+	\indent{}\textbf{Existence}: \textbf{For every} $x \in A$, there exists an $y \in B$ with $R(x,y)$ | Every input is mapped to at least one output \\
+	\indent{}\textbf{Not a function}, if not Uniqueness \\
+	\indent{}\textbf{Partial Function}, if Uniqueness and not Existence \\
+	\indent{}\textbf{Total Function}, if both, \verb|"|total function\verb|"| = \verb|"|function\verb|"| \\
+	\indent{}A function $f \colon A \rightarrow B$ is \textbf{one-to-one} (an injection) if and only if for every $x,y \in A$, if $f(x) = f(y)$, then $x=y$ \\
+		\indent{\hspace{\parindent}}Two different inputs cannot map to the same output \\
+	\indent{}A function $f \colon A \rightarrow B$ is \textbf{onto} (a surjection) if and only if for every $y \in B$ there is an $x \in A$ with $f(x) = y$ \\
+		\indent{\hspace{\parindent}}Every member of the codomain must be mapped to by at least one member of the domain \\
+	\indent{}A function that is a \textbf{bijection} is both \textbf{one-to-one} and \textbf{onto} \\
+\textbf{Cardinality (Functions)}: \\
+	\indent{}\textbf{Bijection} ($A \rightarrow B$): $|A| = |B|$ \\
+	\indent{}\textbf{One-to-One} ($A \rightarrow B$): $|A| \leq |B|$ \\
+	\indent{}\textbf{Onto} ($A \rightarrow B$): $|A| \geq |B|$ \\
+\textbf{First Order Logic (FOL)}: $\forall$ (For All) \& $\exists$ (There exists) \\
+\textbf{Strong Induction}: Assume for some integer $k \geq 1$, $i$ ... for all $1 \leq i \leq k$ \\
+\textbf{Combinatorics} \\
+	\indent{}\textbf{Repeats} - $n^r$ where $|\verb|result|| = r$ and $|\verb|set|| = n$ \\
+	\indent{}\textbf{Permutations} (Ordered) - $P(n,r) = nPr = \frac{n!}{(n-r)!}$ where $|\verb|result|| = r$ and $|\verb|set|| = n$ \\
+	\indent{}\textbf{Combinations} - $\frac{_nP_r}{r!} = \frac{\frac{n!}{(n-r)!}}{r!} = \frac{n!}{(n-r)! \cdot r!}$ where $|\verb|result|| = r$ and $|\verb|set|| = n$ \\
+\textbf{Growth Rates}: factorial ($n!$) $>$ exponential ($c^n$) $>$ polynomial ($n^c$) $>$ linear ($n$) $>$ roots ($\sqrt{n}$) $>$ logarithmic ($log_bn$) $>$ constant ($c$) \\
+\textbf{Graph Theory} \\
+\indent{}Two vertices are \textbf{neighbours} or \textbf{adjacent} if there is an edge between them (in an undirected graph) \\
+\indent{}If there is an edge in a directed graph $V \rightarrow W$, $W$ is the \textbf{child} of $V$ and $V$ is the \textbf{parent} of $W$ \\
+\indent{}The \textbf{degree} of a vertex is the number of neighbours \\
+\indent{}A \textbf{path} from a vertices $V \rightarrow W$ is a sequence of edges $V \rightarrow V_1 \rightarrow ... \rightarrow W$ starting at $V$ and ending at $W$ with no repeated edges \\
+\indent{}A \textbf{trail} is a path that allows repeated vertices \\
+\indent{}Vertices ($V$, $W$) are \textbf{connected} (there is a path from $V \rightarrow W$) and a graph is \textbf{connected} (any two vertices are \textbf{connected}) \\
+\indent{}A \textbf{walk} is a path that can have repeated edges and/or vertices \\
+\indent{}A \textbf{cycle} is a trail (not a walk) from a vertex to itself where only the first and last vertices are the same and there is at least one edge
+\end{document}
